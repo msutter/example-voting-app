@@ -16,8 +16,16 @@ namespace Worker
         {
             try
             {
-                var pgsql = OpenDbConnection("Server=db; Database=vote; Username=userDWI; Password=6HG8Q73xVtU7AWSH");
-                var redisConn = OpenRedisConnection("redis");
+                var pgHost = "db";
+                var pgUser = Environment.GetEnvironmentVariable("username");
+                var pgPassword = Environment.GetEnvironmentVariable("password");
+                var pgDatabaseName = Environment.GetEnvironmentVariable("database_name");
+                
+                var pgUri = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT ");
+                var pgsql = OpenDbConnection($"Server={pgHost}; Database={pgDatabaseName}; Username={pgUser}; Password={pgPassword}");
+
+                var redisHost = "redis";
+                var redisConn = OpenRedisConnection(redisHost);
                 var redis = redisConn.GetDatabase();
 
                 // Keep alive is not implemented in Npgsql yet. This workaround was recommended:
@@ -34,7 +42,7 @@ namespace Worker
                     // Reconnect redis if down
                     if (redisConn == null || !redisConn.IsConnected) {
                         Console.WriteLine("Reconnecting Redis");
-                        redisConn = OpenRedisConnection("redis");
+                        redisConn = OpenRedisConnection(redisHost);
                         redis = redisConn.GetDatabase();
                     }
                     string json = redis.ListLeftPopAsync("votes").Result;
@@ -46,7 +54,7 @@ namespace Worker
                         if (!pgsql.State.Equals(System.Data.ConnectionState.Open))
                         {
                             Console.WriteLine("Reconnecting DB");
-                            pgsql = OpenDbConnection("Server=db; Database=vote; Username=userDWI; Password=6HG8Q73xVtU7AWSH");
+                            pgsql = OpenDbConnection($"Server={pgHost}; Database={pgDatabaseName}; Username={pgUser}; Password={pgPassword}");
                         }
                         else
                         { // Normal +1 vote requested
@@ -106,6 +114,8 @@ namespace Worker
         {
             // Use IP address to workaround https://github.com/StackExchange/StackExchange.Redis/issues/410
             var ipAddress = GetIp(hostname);
+            var redisPassword = Environment.GetEnvironmentVariable("database-password");
+
             Console.WriteLine($"Found redis at {ipAddress}");
 
             while (true)
@@ -113,7 +123,7 @@ namespace Worker
                 try
                 {
                     Console.Error.WriteLine("Connecting to redis");
-                    return ConnectionMultiplexer.Connect($"{ipAddress}, password=1234");
+                    return ConnectionMultiplexer.Connect($"{ipAddress}, password={redisPassword}");
                 }
                 catch (RedisConnectionException)
                 {

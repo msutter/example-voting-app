@@ -14,6 +14,11 @@ io.set('transports', ['polling']);
 
 var port = process.env.PORT || 8080;
 
+var pgHost = 'db'
+var pgUser = process.env.username || postgres;
+var pgPassword = process.env.password || postgres;
+var pgDatabaseName = process.env.database_name || postgres;
+
 io.sockets.on('connection', function (socket) {
 
   socket.emit('message', { text : 'Welcome!' });
@@ -24,7 +29,7 @@ io.sockets.on('connection', function (socket) {
 });
 
 var pool = new pg.Pool({
-  connectionString: 'postgres://userDWI:6HG8Q73xVtU7AWSH@db/vote'
+  connectionString: `postgres://${pgUser}:${pgPassword}@${pgHost}/${pgDatabaseName}`
 });
 
 async.retry(
