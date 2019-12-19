@@ -9,3 +9,6 @@ ComponentSettings:
   Application: app
   Project: vote
   Name: result
+  Url:
+  - Name: result-8080
+    Port: 8080

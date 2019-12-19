@@ -1,7 +1,7 @@
 kind: LocalConfig
 apiversion: odo.openshift.io/v1alpha1
 ComponentSettings:
-  Type: dotnet
+  Type: dotnet:2.1
   SourceLocation: ./
   SourceType: local
   Ports:

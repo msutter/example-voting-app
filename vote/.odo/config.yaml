@@ -1,7 +1,7 @@
 kind: LocalConfig
 apiversion: odo.openshift.io/v1alpha1
 ComponentSettings:
-  Type: python
+  Type: python:2.7
   SourceLocation: ./
   SourceType: local
   Ports:
@@ -9,3 +9,6 @@ ComponentSettings:
   Application: app
   Project: vote
   Name: vote
+  Url:
+  - Name: vote-8080
+    Port: 8080
