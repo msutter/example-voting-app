@@ -4,7 +4,7 @@ metadata:
   labels:
     app: worker
   name: worker
-  namespace: vote
+  namespace: vote-tilt
 spec:
   replicas: 1
   selector:
@@ -16,5 +16,5 @@ spec:
         app: worker
     spec:
       containers:
-      - image: dockersamples/examplevotingapp_worker
+      - image: msutter/examplevotingapp_worker
         name: worker

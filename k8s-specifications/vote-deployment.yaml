@@ -4,7 +4,7 @@ metadata:
   labels:
     app: vote
   name: vote
-  namespace: vote
+  namespace: vote-tilt
 spec:
   replicas: 1
   selector:
@@ -16,7 +16,7 @@ spec:
         app: vote
     spec:
       containers:
-      - image: dockersamples/examplevotingapp_vote:before
+      - image: msutter/examplevotingapp_vote:before
         name: vote
         ports:
         - containerPort: 80

@@ -4,7 +4,7 @@ metadata:
   labels:
     app: db
   name: db
-  namespace: vote
+  namespace: vote-tilt
 spec:
   replicas: 1
   selector:
