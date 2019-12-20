@@ -1,0 +1,9 @@
+kind: Module
+name: worker
+description: Worker container
+type: container
+services:
+  - name: worker
+    dependencies:
+      - redis
+      - db-init

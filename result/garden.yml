@@ -1,0 +1,19 @@
+kind: Module
+name: result
+description: Result frontend service container
+type: container
+services:
+  - name: result
+    ports:
+      - name: http
+        containerPort: 80
+    healthCheck:
+      httpGet:
+        path: /
+        port: http
+    ingresses:
+      - path: /
+        port: http
+        hostname: example-vote.result.local.app.garden
+    dependencies:
+      - db-init

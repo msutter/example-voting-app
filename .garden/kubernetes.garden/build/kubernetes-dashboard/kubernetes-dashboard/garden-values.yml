@@ -1,0 +1,11 @@
+fullnameOverride: kubernetes-dashboard
+service:
+  type: NodePort
+enableInsecureLogin: true
+enableSkipLogin: true
+rbac:
+  clusterAdminRole: true
+.garden:
+  moduleName: kubernetes-dashboard
+  projectName: garden-system
+  version: v-35481a547c

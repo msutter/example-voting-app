@@ -1,0 +1,19 @@
+kind: Module
+name: vote
+description: Frontend service container
+type: container
+services:
+  - name: vote
+    ports:
+      - name: http
+        containerPort: 80
+    healthCheck:
+      httpGet:
+        path: /
+        port: http
+    ingresses:
+      - path: /
+        port: http
+        hostname: example-vote.vote.local.app.garden
+    dependencies:
+      - redis

@@ -1,0 +1,13 @@
+name: ingress-controller
+controller:
+  defaultBackendService: garden-system/default-backend
+  kind: DaemonSet
+  daemonset:
+    useHostPort: true
+  minReadySeconds: 1
+defaultBackend:
+  enabled: false
+.garden:
+  moduleName: ingress-controller
+  projectName: garden-system
+  version: v-029bdf6b94
