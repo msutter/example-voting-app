@@ -16,15 +16,15 @@ namespace Worker
         {
             try
             {
-                var pgHost = "db";
+                var pgHost = Environment.GetEnvironmentVariable("POSTGRES_SERVICE_NAME");
                 var pgUser = Environment.GetEnvironmentVariable("username");
                 var pgPassword = Environment.GetEnvironmentVariable("password");
                 var pgDatabaseName = Environment.GetEnvironmentVariable("database_name");
                 
-                var pgUri = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT ");
+                var pgUri = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
                 var pgsql = OpenDbConnection($"Server={pgHost}; Database={pgDatabaseName}; Username={pgUser}; Password={pgPassword}");
 
-                var redisHost = "redis";
+                var redisHost = Environment.GetEnvironmentVariable("REDIS_SERVICE_NAME");
                 var redisConn = OpenRedisConnection(redisHost);
                 var redis = redisConn.GetDatabase();
 
