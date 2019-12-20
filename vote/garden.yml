@@ -16,4 +16,4 @@ services:
         port: http
         hostname: example-vote.vote.local.app.garden
     dependencies:
-      - redis
+      - worker

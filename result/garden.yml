@@ -16,4 +16,4 @@ services:
         port: http
         hostname: example-vote.result.local.app.garden
     dependencies:
-      - db-init
+      - worker

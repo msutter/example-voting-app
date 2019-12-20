@@ -3602,3 +3602,114 @@ errorDetails:
       key: host
       label: host
 
+
+[2019-12-20T16:16:01.226Z] Error: Service vote is not running
+    at CallCommand.<anonymous> (/snapshot/dist/build/src/commands/call.js:0)
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/dist/build/src/commands/call.js:0)
+Error Details:
+serviceName: vote
+status:
+  forwardablePorts:
+    - name: http
+      protocol: TCP
+      targetPort: 80
+  ingresses:
+    - hostname: example-vote.vote.local.app.garden
+      path: /
+      port: 80
+      protocol: http
+  state: missing
+  detail:
+    remoteResources: []
+    workload:
+      kind: Deployment
+      apiVersion: apps/v1
+      metadata:
+        name: vote-v-7af3c557a2
+        annotations:
+          garden.io/configured.replicas: '1'
+          garden.io/generated: 'true'
+          garden.io/version: v-7af3c557a2
+        namespace: vote-garden
+        labels:
+          module: vote
+          service: vote
+          garden.io/version: v-7af3c557a2
+      spec:
+        selector:
+          matchLabels:
+            service: vote
+            garden.io/version: v-7af3c557a2
+        template:
+          metadata:
+            labels:
+              module: vote
+              service: vote
+              garden.io/version: v-7af3c557a2
+          spec:
+            containers:
+              - name: vote
+                image: 'vote:v-7af3c557a2'
+                env:
+                  - name: POD_NAME
+                    valueFrom:
+                      fieldRef:
+                        fieldPath: metadata.name
+                  - name: POD_NAMESPACE
+                    valueFrom:
+                      fieldRef:
+                        fieldPath: metadata.namespace
+                  - name: POD_IP
+                    valueFrom:
+                      fieldRef:
+                        fieldPath: status.podIP
+                  - name: POD_SERVICE_ACCOUNT
+                    valueFrom:
+                      fieldRef:
+                        fieldPath: spec.serviceAccountName
+                ports:
+                  - name: http
+                    protocol: TCP
+                    containerPort: 80
+                resources:
+                  requests:
+                    cpu: 10m
+                    memory: 64Mi
+                  limits:
+                    cpu: '1'
+                    memory: 1Gi
+                imagePullPolicy: IfNotPresent
+                securityContext:
+                  allowPrivilegeEscalation: false
+                readinessProbe:
+                  initialDelaySeconds: 2
+                  periodSeconds: 1
+                  timeoutSeconds: 3
+                  successThreshold: 2
+                  failureThreshold: 90
+                  httpGet:
+                    path: /
+                    port: 80
+                    scheme: HTTP
+                livenessProbe:
+                  initialDelaySeconds: 90
+                  periodSeconds: 5
+                  timeoutSeconds: 3
+                  successThreshold: 1
+                  failureThreshold: 3
+                  httpGet:
+                    path: /
+                    port: 80
+                    scheme: HTTP
+            restartPolicy: Always
+            terminationGracePeriodSeconds: 5
+            dnsPolicy: ClusterFirst
+        replicas: 1
+        strategy:
+          type: RollingUpdate
+          rollingUpdate:
+            maxUnavailable: 1
+            maxSurge: 1
+        revisionHistoryLimit: 3
+

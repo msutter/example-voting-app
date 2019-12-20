@@ -5455,3 +5455,602 @@ See error.log for detailed error message
 [2019-12-20T16:14:29.309Z] Deleting namespace vote-garden (this may take a while)
 
 [2019-12-20T16:14:43.292Z] Cleaning up environments...
+
+[2019-12-20T16:15:38.163Z] Call 📞 
+
+[2019-12-20T16:15:38.174Z] Getting status...
+
+[2019-12-20T16:15:52.513Z] Preparing environment...
+
+[2019-12-20T16:15:52.516Z] Configuring...
+
+[2019-12-20T16:15:52.608Z] Installing to vote-garden...
+
+[2019-12-20T16:15:52.612Z] Applying Tiller RBAC resources...
+
+[2019-12-20T16:15:52.864Z] Waiting for resources to be ready...
+
+[2019-12-20T16:15:54.889Z] Resources ready
+
+[2019-12-20T16:15:54.952Z] Deploying Tiller...
+
+[2019-12-20T16:15:56.397Z] Waiting for resources to be ready...
+
+[2019-12-20T16:15:58.451Z] Deployment/tiller-deploy: Started container tiller
+
+[2019-12-20T16:16:00.966Z] Resources ready
+
+[2019-12-20T16:16:00.968Z] Deploying Tiller... → Done (took 8.4 sec)
+
+[2019-12-20T16:16:00.972Z] Configuring... → Ready
+
+[2019-12-20T16:16:00.979Z] Preparing environment... → Done
+
+[2019-12-20T16:16:01.228Z] Error: Service vote is not running
+    at CallCommand.<anonymous> (/snapshot/dist/build/src/commands/call.js:0)
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/dist/build/src/commands/call.js:0)
+Error Details:
+serviceName: vote
+status:
+  forwardablePorts:
+    - name: http
+      protocol: TCP
+      targetPort: 80
+  ingresses:
+    - hostname: example-vote.vote.local.app.garden
+      path: /
+      port: 80
+      protocol: http
+  state: missing
+  detail:
+    remoteResources: []
+    workload:
+      kind: Deployment
+      apiVersion: apps/v1
+      metadata:
+        name: vote-v-7af3c557a2
+        annotations:
+          garden.io/configured.replicas: '1'
+          garden.io/generated: 'true'
+          garden.io/version: v-7af3c557a2
+        namespace: vote-garden
+        labels:
+          module: vote
+          service: vote
+          garden.io/version: v-7af3c557a2
+      spec:
+        selector:
+          matchLabels:
+            service: vote
+            garden.io/version: v-7af3c557a2
+        template:
+          metadata:
+            labels:
+              module: vote
+              service: vote
+              garden.io/version: v-7af3c557a2
+          spec:
+            containers:
+              - name: vote
+                image: 'vote:v-7af3c557a2'
+                env:
+                  - name: POD_NAME
+                    valueFrom:
+                      fieldRef:
+                        fieldPath: metadata.name
+                  - name: POD_NAMESPACE
+                    valueFrom:
+                      fieldRef:
+                        fieldPath: metadata.namespace
+                  - name: POD_IP
+                    valueFrom:
+                      fieldRef:
+                        fieldPath: status.podIP
+                  - name: POD_SERVICE_ACCOUNT
+                    valueFrom:
+                      fieldRef:
+                        fieldPath: spec.serviceAccountName
+                ports:
+                  - name: http
+                    protocol: TCP
+                    containerPort: 80
+                resources:
+                  requests:
+                    cpu: 10m
+                    memory: 64Mi
+                  limits:
+                    cpu: '1'
+                    memory: 1Gi
+                imagePullPolicy: IfNotPresent
+                securityContext:
+                  allowPrivilegeEscalation: false
+                readinessProbe:
+                  initialDelaySeconds: 2
+                  periodSeconds: 1
+                  timeoutSeconds: 3
+                  successThreshold: 2
+                  failureThreshold: 90
+                  httpGet:
+                    path: /
+                    port: 80
+                    scheme: HTTP
+                livenessProbe:
+                  initialDelaySeconds: 90
+                  periodSeconds: 5
+                  timeoutSeconds: 3
+                  successThreshold: 1
+                  failureThreshold: 3
+                  httpGet:
+                    path: /
+                    port: 80
+                    scheme: HTTP
+            restartPolicy: Always
+            terminationGracePeriodSeconds: 5
+            dnsPolicy: ClusterFirst
+        replicas: 1
+        strategy:
+          type: RollingUpdate
+          rollingUpdate:
+            maxUnavailable: 1
+            maxSurge: 1
+        revisionHistoryLimit: 3
+
+
+[2019-12-20T16:16:01.231Z] 
+See error.log for detailed error message
+
+[2019-12-20T16:16:12.893Z] Deleting local environment ☠️ 
+
+[2019-12-20T16:16:12.901Z] Getting status...
+
+[2019-12-20T16:16:27.213Z] Getting status... → Done
+
+[2019-12-20T16:16:27.312Z] Deleting services...
+
+[2019-12-20T16:16:27.767Z] Syncing module sources (5 files)...
+
+[2019-12-20T16:16:27.770Z] Syncing module sources (27 files)...
+
+[2019-12-20T16:16:27.774Z] Syncing module sources (36 files)...
+
+[2019-12-20T16:16:27.918Z] Syncing module sources (5 files)... → Done (took 0.1 sec)
+
+[2019-12-20T16:16:27.925Z] Syncing module sources (27 files)... → Done (took 0.2 sec)
+
+[2019-12-20T16:16:27.930Z] Syncing module sources (36 files)... → Done (took 0.2 sec)
+
+[2019-12-20T16:16:27.935Z] Deleting...
+
+[2019-12-20T16:16:27.938Z] Deleting...
+
+[2019-12-20T16:16:27.941Z] Deleting...
+
+[2019-12-20T16:16:27.945Z] Deleting...
+
+[2019-12-20T16:16:28.018Z] Not found
+
+[2019-12-20T16:16:28.058Z] Not found
+
+[2019-12-20T16:16:28.067Z] Not found
+
+[2019-12-20T16:16:28.074Z] Not found
+
+[2019-12-20T16:16:28.082Z] Deleting...
+
+[2019-12-20T16:16:28.102Z] Not found
+
+[2019-12-20T16:16:28.106Z] Deleting services...
+
+[2019-12-20T16:16:28.111Z] Cleaning up environments...
+
+[2019-12-20T16:16:28.114Z] Deleting namespace vote-garden (this may take a while)
+
+[2019-12-20T16:16:50.249Z] Deleting namespace vote-garden (this may take a while)
+
+[2019-12-20T16:17:04.141Z] Cleaning up environments...
+
+[2019-12-20T16:17:37.978Z] Getting status...
+
+[2019-12-20T16:17:52.422Z] Preparing environment...
+
+[2019-12-20T16:17:52.442Z] Configuring...
+
+[2019-12-20T16:17:52.542Z] Installing to vote-garden...
+
+[2019-12-20T16:17:52.553Z] Applying Tiller RBAC resources...
+
+[2019-12-20T16:17:52.801Z] Waiting for resources to be ready...
+
+[2019-12-20T16:17:54.831Z] Resources ready
+
+[2019-12-20T16:17:54.899Z] Deploying Tiller...
+
+[2019-12-20T16:17:56.374Z] Waiting for resources to be ready...
+
+[2019-12-20T16:17:58.439Z] Deployment/tiller-deploy: Started container tiller
+
+[2019-12-20T16:18:07.564Z] Resources ready
+
+[2019-12-20T16:18:07.579Z] Deploying Tiller... → Done (took 15 sec)
+
+[2019-12-20T16:18:07.589Z] Configuring... → Ready
+
+[2019-12-20T16:18:07.602Z] Preparing environment... → Done
+
+[2019-12-20T16:18:08.792Z] 
+⏳  Processing...
+
+[2019-12-20T16:18:08.809Z] Checking result...
+
+[2019-12-20T16:18:08.829Z] Checking result... → Done
+
+[2019-12-20T16:18:08.897Z] Syncing module sources (36 files)...
+
+[2019-12-20T16:18:08.909Z] Syncing module sources (5 files)...
+
+[2019-12-20T16:18:08.920Z] Syncing module sources (27 files)...
+
+[2019-12-20T16:18:09.039Z] Syncing module sources (36 files)... → Done (took 0.1 sec)
+
+[2019-12-20T16:18:09.061Z] Syncing module sources (5 files)... → Done (took 0.1 sec)
+
+[2019-12-20T16:18:09.075Z] Syncing module sources (27 files)... → Done (took 0.2 sec)
+
+[2019-12-20T16:18:09.188Z] Getting build status for v-6c76a24e08...
+
+[2019-12-20T16:18:09.198Z] Getting build status for v-fcc8fb045f...
+
+[2019-12-20T16:18:09.212Z] Getting build status for v-6c76a24e08... → Done (took 0 sec)
+
+[2019-12-20T16:18:09.225Z] Getting build status for v-fcc8fb045f... → Done (took 0 sec)
+
+[2019-12-20T16:18:09.239Z] Getting build status for v-16cbaf84ba...
+
+[2019-12-20T16:18:09.250Z] Getting build status for v-7af3c557a2...
+
+[2019-12-20T16:18:09.349Z] Deploying version v-fcc8fb045f...
+
+[2019-12-20T16:18:09.381Z] Getting build status for v-cab61aa27b...
+
+[2019-12-20T16:18:09.476Z] Deploying version v-6c76a24e08...
+
+[2019-12-20T16:18:10.512Z] Getting build status for v-16cbaf84ba... → Done (took 1.3 sec)
+
+[2019-12-20T16:18:10.538Z] Getting build status for v-7af3c557a2... → Done (took 1.3 sec)
+
+[2019-12-20T16:18:10.624Z] Getting build status for v-cab61aa27b... → Done (took 1.2 sec)
+
+[2019-12-20T16:18:11.022Z] Waiting for resources to be ready...
+
+[2019-12-20T16:18:11.362Z] Waiting for resources to be ready...
+
+[2019-12-20T16:18:13.065Z] Resources ready
+
+[2019-12-20T16:18:13.137Z] Deploying version v-fcc8fb045f... → Done (took 3.8 sec)
+
+[2019-12-20T16:18:13.155Z] → Forward: redis://localhost:56615 → redis:6379 (redis)
+
+[2019-12-20T16:18:13.176Z] Deploying version v-7af3c557a2...
+
+[2019-12-20T16:18:13.533Z] Deployment/db-v-6c76a24e08: Readiness probe failed: psql: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+
+[2019-12-20T16:18:14.849Z] Waiting for resources to be ready...
+
+[2019-12-20T16:18:16.922Z] Deployment/vote-v-7af3c557a2: Started container vote
+
+[2019-12-20T16:18:19.164Z] Resources ready
+
+[2019-12-20T16:18:19.220Z] Deploying version v-6c76a24e08... → Done (took 9.7 sec)
+
+[2019-12-20T16:18:19.239Z] → Forward: postgres://localhost:56653 → db:5432 (db)
+
+[2019-12-20T16:18:19.271Z] Running...
+
+[2019-12-20T16:18:19.459Z] Resources ready
+
+[2019-12-20T16:18:19.511Z] Deploying version v-7af3c557a2... → Done (took 6.3 sec)
+
+[2019-12-20T16:18:19.528Z] → Ingress: http://example-vote.vote.local.app.garden
+
+[2019-12-20T16:18:19.546Z] → Forward: http://localhost:56666 → vote:80 (http)
+
+[2019-12-20T16:18:21.936Z] Running... → Done (took 2.7 sec)
+
+[2019-12-20T16:18:22.062Z] Deploying version v-cab61aa27b...
+
+[2019-12-20T16:18:22.094Z] Deploying version v-16cbaf84ba...
+
+[2019-12-20T16:18:23.636Z] Waiting for resources to be ready...
+
+[2019-12-20T16:18:23.785Z] Waiting for resources to be ready...
+
+[2019-12-20T16:18:25.672Z] Resources ready
+
+[2019-12-20T16:18:25.721Z] Deploying version v-cab61aa27b... → Done (took 3.7 sec)
+
+[2019-12-20T16:18:25.863Z] Deployment/result-v-16cbaf84ba: Started container result
+
+[2019-12-20T16:18:28.394Z] Resources ready
+
+[2019-12-20T16:18:28.448Z] Deploying version v-16cbaf84ba... → Done (took 6.4 sec)
+
+[2019-12-20T16:18:28.465Z] → Ingress: http://example-vote.result.local.app.garden
+
+[2019-12-20T16:18:28.482Z] → Forward: http://localhost:56714 → result:80 (http)
+
+[2019-12-20T16:18:28.502Z] 
+🕑  Waiting for code changes...
+
+[2019-12-20T16:18:34.476Z] 
+⏳  Processing...
+
+[2019-12-20T16:18:34.506Z] 
+🕑  Waiting for code changes...
+
+[2019-12-20T16:18:45.356Z] 
+⏳  Processing...
+
+[2019-12-20T16:18:45.387Z] 
+🕑  Waiting for code changes...
+
+[2019-12-20T16:19:26.556Z] Getting status...
+
+[2019-12-20T16:19:42.264Z] Getting status... → Done
+
+[2019-12-20T16:19:44.188Z] 
+⏳  Processing...
+
+[2019-12-20T16:19:44.206Z] Checking result...
+
+[2019-12-20T16:19:44.261Z] Checking result... → Done
+
+[2019-12-20T16:19:44.350Z] Syncing module sources (36 files)...
+
+[2019-12-20T16:19:44.363Z] Syncing module sources (5 files)...
+
+[2019-12-20T16:19:44.380Z] Syncing module sources (27 files)...
+
+[2019-12-20T16:19:44.576Z] Syncing module sources (5 files)... → Done (took 0.2 sec)
+
+[2019-12-20T16:19:44.605Z] Syncing module sources (36 files)... → Done (took 0.2 sec)
+
+[2019-12-20T16:19:44.667Z] Syncing module sources (27 files)... → Done (took 0.3 sec)
+
+[2019-12-20T16:19:44.799Z] Getting build status for v-6c76a24e08...
+
+[2019-12-20T16:19:44.814Z] Getting build status for v-6c76a24e08... → Done (took 0 sec)
+
+[2019-12-20T16:19:44.831Z] Getting build status for v-fcc8fb045f...
+
+[2019-12-20T16:19:44.847Z] Getting build status for v-fcc8fb045f... → Done (took 0 sec)
+
+[2019-12-20T16:19:44.870Z] Getting build status for v-16cbaf84ba...
+
+[2019-12-20T16:19:44.905Z] Getting build status for v-7af3c557a2...
+
+[2019-12-20T16:19:44.990Z] Getting build status for v-cab61aa27b...
+
+[2019-12-20T16:19:45.076Z] Deploying version v-fcc8fb045f...
+
+[2019-12-20T16:19:45.100Z] Deploying version v-fcc8fb045f... → Version v-fcc8fb045f already deployed
+
+[2019-12-20T16:19:45.135Z] → Forward: redis://localhost:56982 → redis:6379 (redis)
+
+[2019-12-20T16:19:45.360Z] Deploying version v-6c76a24e08...
+
+[2019-12-20T16:19:45.387Z] Deploying version v-6c76a24e08... → Version v-6c76a24e08 already deployed
+
+[2019-12-20T16:19:45.436Z] → Forward: postgres://localhost:57000 → db:5432 (db)
+
+[2019-12-20T16:19:45.674Z] Already run
+
+[2019-12-20T16:19:46.342Z] Getting build status for v-16cbaf84ba... → Done (took 1.5 sec)
+
+[2019-12-20T16:19:46.370Z] Getting build status for v-7af3c557a2... → Done (took 1.5 sec)
+
+[2019-12-20T16:19:46.394Z] Getting build status for v-cab61aa27b... → Done (took 1.4 sec)
+
+[2019-12-20T16:19:46.413Z] Deploying version v-7af3c557a2...
+
+[2019-12-20T16:19:46.428Z] Deploying version v-7af3c557a2... → Version v-7af3c557a2 already deployed
+
+[2019-12-20T16:19:46.447Z] → Ingress: http://example-vote.vote.local.app.garden
+
+[2019-12-20T16:19:46.464Z] → Forward: http://localhost:57015 → vote:80 (http)
+
+[2019-12-20T16:19:46.486Z] Deploying version v-16cbaf84ba...
+
+[2019-12-20T16:19:46.509Z] Deploying version v-cab61aa27b...
+
+[2019-12-20T16:19:48.055Z] Waiting for resources to be ready...
+
+[2019-12-20T16:19:48.080Z] Waiting for resources to be ready...
+
+[2019-12-20T16:19:50.088Z] Resources ready
+
+[2019-12-20T16:19:50.166Z] Deploying version v-cab61aa27b... → Done (took 3.7 sec)
+
+[2019-12-20T16:19:50.237Z] Deployment/result-v-16cbaf84ba: Started container result
+
+[2019-12-20T16:19:52.792Z] Resources ready
+
+[2019-12-20T16:19:52.873Z] Deploying version v-16cbaf84ba... → Done (took 6.4 sec)
+
+[2019-12-20T16:19:52.896Z] → Ingress: http://example-vote.result.local.app.garden
+
+[2019-12-20T16:19:52.918Z] → Forward: http://localhost:57050 → result:80 (http)
+
+[2019-12-20T16:19:52.940Z] 
+🕑  Waiting for code changes...
+
+[2019-12-20T16:19:52.964Z] 
+⏳  Processing...
+
+[2019-12-20T16:19:52.985Z] 
+🕑  Waiting for code changes...
+
+[2019-12-20T16:20:44.891Z] Getting status...
+
+[2019-12-20T16:21:00.254Z] Getting status... → Done
+
+[2019-12-20T16:21:00.416Z] Module configuration changed, reloading...
+
+[2019-12-20T16:21:00.463Z] Getting status...
+
+[2019-12-20T16:21:15.209Z] Getting status... → Done
+
+[2019-12-20T16:21:17.449Z] 
+⏳  Processing...
+
+[2019-12-20T16:21:17.471Z] Checking result...
+
+[2019-12-20T16:21:17.501Z] Checking result... → Done
+
+[2019-12-20T16:21:17.556Z] Syncing module sources (5 files)...
+
+[2019-12-20T16:21:17.571Z] Syncing module sources (27 files)...
+
+[2019-12-20T16:21:17.588Z] Syncing module sources (36 files)...
+
+[2019-12-20T16:21:17.708Z] Syncing module sources (5 files)... → Done (took 0.1 sec)
+
+[2019-12-20T16:21:17.729Z] Syncing module sources (27 files)... → Done (took 0.2 sec)
+
+[2019-12-20T16:21:17.751Z] Syncing module sources (36 files)... → Done (took 0.2 sec)
+
+[2019-12-20T16:21:17.856Z] Getting build status for v-4c286dedb5...
+
+[2019-12-20T16:21:17.891Z] Getting build status for v-cab61aa27b...
+
+[2019-12-20T16:21:17.929Z] Getting build status for v-6c76a24e08...
+
+[2019-12-20T16:21:17.960Z] Getting build status for v-fcc8fb045f...
+
+[2019-12-20T16:21:17.988Z] Getting build status for v-6c76a24e08... → Done (took 0.1 sec)
+
+[2019-12-20T16:21:18.011Z] Getting build status for v-fcc8fb045f... → Done (took 0.1 sec)
+
+[2019-12-20T16:21:18.087Z] Getting build status for v-6f38685ab6...
+
+[2019-12-20T16:21:18.154Z] Deploying version v-fcc8fb045f...
+
+[2019-12-20T16:21:18.188Z] Deploying version v-fcc8fb045f... → Version v-fcc8fb045f already deployed
+
+[2019-12-20T16:21:18.221Z] → Forward: redis://localhost:56982 → redis:6379 (redis)
+
+[2019-12-20T16:21:18.296Z] Deploying version v-6c76a24e08...
+
+[2019-12-20T16:21:18.325Z] Deploying version v-6c76a24e08... → Version v-6c76a24e08 already deployed
+
+[2019-12-20T16:21:18.354Z] → Forward: postgres://localhost:57000 → db:5432 (db)
+
+[2019-12-20T16:21:18.421Z] Already run
+
+[2019-12-20T16:21:18.773Z] Getting build status for v-cab61aa27b... → Done (took 0.9 sec)
+
+[2019-12-20T16:21:18.804Z] Building version v-6f38685ab6...
+
+[2019-12-20T16:21:18.830Z] Building result:v-6f38685ab6...
+
+[2019-12-20T16:21:18.868Z] Building version v-4c286dedb5...
+
+[2019-12-20T16:21:18.897Z] Building vote:v-4c286dedb5...
+
+[2019-12-20T16:21:18.951Z] Deploying version v-cab61aa27b...
+
+[2019-12-20T16:21:18.989Z] Deploying version v-cab61aa27b... → Version v-cab61aa27b already deployed
+
+[2019-12-20T16:21:19.331Z] Building vote:v-4c286dedb5... → Done (took 1.5 sec)
+
+[2019-12-20T16:21:19.357Z] Building result:v-6f38685ab6... → Done (took 1.3 sec)
+
+[2019-12-20T16:21:19.383Z] Deploying version v-4c286dedb5...
+
+[2019-12-20T16:21:19.405Z] Deploying version v-6f38685ab6...
+
+[2019-12-20T16:21:21.488Z] Waiting for resources to be ready...
+
+[2019-12-20T16:21:21.598Z] Waiting for resources to be ready...
+
+[2019-12-20T16:21:23.608Z] Deployment/result-v-6f38685ab6: Started container result
+
+[2019-12-20T16:21:23.765Z] Deployment/vote-v-4c286dedb5: Started container vote
+
+[2019-12-20T16:21:26.200Z] Resources ready
+
+[2019-12-20T16:21:26.359Z] Resources ready
+
+[2019-12-20T16:21:26.389Z] Deploying version v-6f38685ab6... → Done (took 7 sec)
+
+[2019-12-20T16:21:26.406Z] → Ingress: http://example-vote.result.local.app.garden
+
+[2019-12-20T16:21:26.434Z] → Forward: http://localhost:57050 → result:80 (http)
+
+[2019-12-20T16:21:26.510Z] Deploying version v-4c286dedb5... → Done (took 7.1 sec)
+
+[2019-12-20T16:21:26.534Z] → Ingress: http://example-vote.vote.local.app.garden
+
+[2019-12-20T16:21:26.561Z] → Forward: http://localhost:57015 → vote:80 (http)
+
+[2019-12-20T16:21:26.581Z] 
+🕑  Waiting for code changes...
+
+[2019-12-20T16:21:26.610Z] 
+⏳  Processing...
+
+[2019-12-20T16:21:26.645Z] 
+🕑  Waiting for code changes...
+
+[2019-12-20T16:22:31.757Z] Deleting local environment ☠️ 
+
+[2019-12-20T16:22:31.769Z] Getting status...
+
+[2019-12-20T16:22:46.913Z] Getting status... → Done
+
+[2019-12-20T16:22:47.046Z] Deleting services...
+
+[2019-12-20T16:22:47.606Z] Syncing module sources (36 files)...
+
+[2019-12-20T16:22:47.609Z] Syncing module sources (5 files)...
+
+[2019-12-20T16:22:47.615Z] Syncing module sources (27 files)...
+
+[2019-12-20T16:22:47.723Z] Syncing module sources (36 files)... → Done (took 0.1 sec)
+
+[2019-12-20T16:22:47.726Z] Syncing module sources (5 files)... → Done (took 0.1 sec)
+
+[2019-12-20T16:22:47.732Z] Syncing module sources (27 files)... → Done (took 0.1 sec)
+
+[2019-12-20T16:22:47.737Z] Deleting...
+
+[2019-12-20T16:22:47.739Z] Deleting...
+
+[2019-12-20T16:22:47.744Z] Deleting...
+
+[2019-12-20T16:22:51.067Z] Deleting... → Done (took 3.3 sec)
+
+[2019-12-20T16:23:04.731Z] Deleting... → Done (took 17 sec)
+
+[2019-12-20T16:23:04.771Z] Deleting... → Done (took 17 sec)
+
+[2019-12-20T16:23:04.776Z] Deleting...
+
+[2019-12-20T16:23:13.703Z] Deleting... → Done (took 8.9 sec)
+
+[2019-12-20T16:23:13.714Z] Deleting...
+
+[2019-12-20T16:23:16.845Z] Deleting... → Done (took 3.1 sec)
+
+[2019-12-20T16:23:16.854Z] Deleting services...
+
+[2019-12-20T16:23:16.867Z] Cleaning up environments...
+
+[2019-12-20T16:23:16.879Z] Deleting namespace vote-garden (this may take a while)
+
+[2019-12-20T16:23:41.082Z] Deleting namespace vote-garden (this may take a while)
+
+[2019-12-20T16:23:55.001Z] Cleaning up environments...
