@@ -6054,3 +6054,77 @@ See error.log for detailed error message
 [2019-12-20T16:23:41.082Z] Deleting namespace vote-garden (this may take a while)
 
 [2019-12-20T16:23:55.001Z] Cleaning up environments...
+
+[2019-12-21T10:52:06.218Z] Deleting local environment ☠️ 
+
+[2019-12-21T10:52:06.228Z] Getting status...
+
+[2019-12-21T10:52:21.611Z] Preparing environment...
+
+[2019-12-21T10:52:21.614Z] Configuring...
+
+[2019-12-21T10:52:21.712Z] Installing to vote-garden...
+
+[2019-12-21T10:52:21.714Z] Applying Tiller RBAC resources...
+
+[2019-12-21T10:52:22.550Z] Waiting for resources to be ready...
+
+[2019-12-21T10:52:24.575Z] Resources ready
+
+[2019-12-21T10:52:24.637Z] Deploying Tiller...
+
+[2019-12-21T10:52:26.120Z] Waiting for resources to be ready...
+
+[2019-12-21T10:52:28.180Z] Deployment/tiller-deploy: Started container tiller
+
+[2019-12-21T10:52:30.695Z] Resources ready
+
+[2019-12-21T10:52:30.698Z] Deploying Tiller... → Done (took 9 sec)
+
+[2019-12-21T10:52:30.702Z] Configuring... → Ready
+
+[2019-12-21T10:52:30.710Z] Preparing environment... → Done
+
+[2019-12-21T10:52:30.854Z] Deleting services...
+
+[2019-12-21T10:52:31.389Z] Syncing module sources (5 files)...
+
+[2019-12-21T10:52:31.393Z] Syncing module sources (27 files)...
+
+[2019-12-21T10:52:31.397Z] Syncing module sources (36 files)...
+
+[2019-12-21T10:52:31.530Z] Syncing module sources (5 files)... → Done (took 0.1 sec)
+
+[2019-12-21T10:52:31.541Z] Syncing module sources (27 files)... → Done (took 0.1 sec)
+
+[2019-12-21T10:52:31.551Z] Syncing module sources (36 files)... → Done (took 0.1 sec)
+
+[2019-12-21T10:52:31.556Z] Deleting...
+
+[2019-12-21T10:52:31.563Z] Deleting...
+
+[2019-12-21T10:52:31.568Z] Deleting...
+
+[2019-12-21T10:52:31.611Z] Not found
+
+[2019-12-21T10:52:31.635Z] Not found
+
+[2019-12-21T10:52:31.646Z] Deleting...
+
+[2019-12-21T10:52:31.665Z] Not found
+
+[2019-12-21T10:52:31.686Z] Not found
+
+[2019-12-21T10:52:31.696Z] Deleting...
+
+[2019-12-21T10:52:31.735Z] Not found
+
+[2019-12-21T10:52:31.742Z] Deleting services...
+
+[2019-12-21T10:52:31.750Z] Cleaning up environments...
+
+[2019-12-21T10:52:31.756Z] Deleting namespace vote-garden (this may take a while)
+
+[2019-12-21T10:52:53.914Z] Deleting namespace vote-garden (this may take a while)
+
+[2019-12-21T10:53:08.146Z] Cleaning up environments...
