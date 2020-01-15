@@ -1,0 +1,47 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"result","app.kubernetes.io/managed-by":"tilt"},"name":"result","namespace":"vote-tilt"},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"result"}},"strategy":{},"template":{"metadata":{"labels":{"app":"result","app.kubernetes.io/managed-by":"tilt","tilt.dev/pod-template-hash":"976432f474b6fee82d4a"}},"spec":{"containers":[{"env":[{"name":"POSTGRESQL_ADMIN_PASSWORD","value":"pass"}],"image":"msutter/examplevotingapp_result:tilt-6aaae061bb24fc14","imagePullPolicy":"IfNotPresent","name":"result","ports":[{"containerPort":8080,"name":"result"}],"resources":{}}]}}}}
+  labels:
+    app: '{{.Release.Name}}-result'
+    app.kubernetes.io/managed-by: tilt
+    chart: '{{.Chart.Name}}-{{.Chart.Version}}'
+    heritage: '{{.Release.Service}}'
+    release: '{{.Release.Name}}'
+  name: '{{ template "fullname" . }}-result'
+  namespace: '{{.Values.result.namespace}}'
+spec:
+  progressDeadlineSeconds: 600
+  replicas: {{.Values.result.replicas}}
+  revisionHistoryLimit: {{.Values.result.revisionHistoryLimit}}
+  selector:
+    matchLabels:
+      app: '{{.Release.Name}}-result'
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: '{{.Values.result.deploymentStrategy}}'
+  template:
+    metadata:
+      labels:
+        app: '{{.Release.Name}}-result'
+        app.kubernetes.io/managed-by: tilt
+        tilt.dev/pod-template-hash: 976432f474b6fee82d4a
+    spec:
+      containers:
+      - env:
+        - name: POSTGRESQL_ADMIN_PASSWORD
+          value: '{{.Values.result.result.postgresqladminpassword}}'
+        image: '{{.Values.result.result.image}}:{{.Values.result.result.imageTag}}'
+        imagePullPolicy: '{{.Values.result.result.imagePullPolicy}}'
+        name: result
+        ports:
+        - containerPort: 8080
+          name: result
+          protocol: TCP
+        terminationMessagePolicy: File
+      restartPolicy: '{{.Values.result.restartPolicy}}'
+      schedulerName: default-scheduler

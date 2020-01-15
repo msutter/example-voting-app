@@ -16,7 +16,8 @@ namespace Worker
         {
             try
             {
-                var pgsql = OpenDbConnection("Server=db;Username=postgres;");
+                var dbPass = Environment.GetEnvironmentVariable("POSTGRESQL_ADMIN_PASSWORD");
+                var pgsql = OpenDbConnection($"Server=db;Username=postgres;Password={dbPass}");
                 var redisConn = OpenRedisConnection("redis");
                 var redis = redisConn.GetDatabase();
 

@@ -1,0 +1,61 @@
+db:
+  deploymentStrategy: RollingUpdate
+  namespace: vote-tilt
+  postgres:
+    image: centos/postgresql-95-centos7
+    imagePullPolicy: IfNotPresent
+    imageTag: latest
+    postgresqladminpassword: pass
+  replicas: 1
+  restartPolicy: Always
+  revisionHistoryLimit: 10
+  serviceType: ClusterIP
+  sessionAffinity: None
+redis:
+  deploymentStrategy: RollingUpdate
+  namespace: vote-tilt
+  redis:
+    image: redis
+    imagePullPolicy: IfNotPresent
+    imageTag: alpine
+  replicas: 1
+  restartPolicy: Always
+  revisionHistoryLimit: 10
+  serviceType: ClusterIP
+  sessionAffinity: None
+result:
+  deploymentStrategy: RollingUpdate
+  namespace: vote-tilt
+  replicas: 1
+  restartPolicy: Always
+  result:
+    image: msutter/examplevotingapp_result
+    imagePullPolicy: IfNotPresent
+    imageTag: tilt-6aaae061bb24fc14
+    postgresqladminpassword: pass
+  revisionHistoryLimit: 10
+  serviceType: NodePort
+  sessionAffinity: None
+vote:
+  deploymentStrategy: RollingUpdate
+  namespace: vote-tilt
+  replicas: 1
+  restartPolicy: Always
+  revisionHistoryLimit: 10
+  serviceType: NodePort
+  sessionAffinity: None
+  vote:
+    image: msutter/examplevotingapp_vote
+    imagePullPolicy: IfNotPresent
+    imageTag: tilt-96f2b85e03ad8432
+worker:
+  deploymentStrategy: RollingUpdate
+  namespace: vote-tilt
+  replicas: 1
+  restartPolicy: Always
+  revisionHistoryLimit: 10
+  worker:
+    image: msutter/examplevotingapp_worker
+    imagePullPolicy: IfNotPresent
+    imageTag: tilt-d75a458df376a1c1
+    postgresqladminpassword: pass

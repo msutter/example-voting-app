@@ -19,5 +19,9 @@ spec:
       - image: msutter/examplevotingapp_result:before
         name: result
         ports:
-        - containerPort: 80
+        - containerPort: 8080
           name: result
+        env:
+        - name: POSTGRESQL_ADMIN_PASSWORD
+          value: "pass"
+

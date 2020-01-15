@@ -18,6 +18,9 @@ spec:
       containers:
       - image: centos/postgresql-95-centos7
         name: postgres
+        env:
+        - name: POSTGRESQL_ADMIN_PASSWORD
+          value: "pass"
         ports:
         - containerPort: 5432
           name: postgres

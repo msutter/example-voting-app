@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"redis","app.kubernetes.io/managed-by":"tilt"},"name":"redis","namespace":"vote-tilt"},"spec":{"ports":[{"name":"redis-service","port":6379,"targetPort":6379}],"selector":{"app":"redis"},"type":"ClusterIP"}}
+  labels:
+    app: redis
+    app.kubernetes.io/managed-by: tilt
+    chart: '{{.Chart.Name}}-{{.Chart.Version}}'
+    heritage: '{{.Release.Service}}'
+    release: '{{.Release.Name}}'
+  name: '{{ template "fullname" . }}-redis'
+  namespace: '{{.Values.redis.namespace}}'
+spec:
+  ports:
+  - name: redis-service
+    port: 6379
+    protocol: TCP
+    targetPort: 6379
+  selector:
+    app: '{{.Release.Name}}-redis'
+  sessionAffinity: '{{.Values.redis.sessionAffinity}}'
+  type: '{{.Values.redis.serviceType}}'

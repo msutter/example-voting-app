@@ -1,0 +1,44 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"vote","app.kubernetes.io/managed-by":"tilt"},"name":"vote","namespace":"vote-tilt"},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"vote"}},"strategy":{},"template":{"metadata":{"labels":{"app":"vote","app.kubernetes.io/managed-by":"tilt","tilt.dev/pod-template-hash":"ec58cb09faa9b1d11357"}},"spec":{"containers":[{"image":"msutter/examplevotingapp_vote:tilt-96f2b85e03ad8432","imagePullPolicy":"IfNotPresent","name":"vote","ports":[{"containerPort":8080,"name":"vote"}],"resources":{}}]}}}}
+  labels:
+    app: '{{.Release.Name}}-vote'
+    app.kubernetes.io/managed-by: tilt
+    chart: '{{.Chart.Name}}-{{.Chart.Version}}'
+    heritage: '{{.Release.Service}}'
+    release: '{{.Release.Name}}'
+  name: '{{ template "fullname" . }}-vote'
+  namespace: '{{.Values.vote.namespace}}'
+spec:
+  progressDeadlineSeconds: 600
+  replicas: {{.Values.vote.replicas}}
+  revisionHistoryLimit: {{.Values.vote.revisionHistoryLimit}}
+  selector:
+    matchLabels:
+      app: '{{.Release.Name}}-vote'
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: '{{.Values.vote.deploymentStrategy}}'
+  template:
+    metadata:
+      labels:
+        app: '{{.Release.Name}}-vote'
+        app.kubernetes.io/managed-by: tilt
+        tilt.dev/pod-template-hash: ec58cb09faa9b1d11357
+    spec:
+      containers:
+      - image: '{{.Values.vote.vote.image}}:{{.Values.vote.vote.imageTag}}'
+        imagePullPolicy: '{{.Values.vote.vote.imagePullPolicy}}'
+        name: vote
+        ports:
+        - containerPort: 8080
+          name: vote
+          protocol: TCP
+        terminationMessagePolicy: File
+      restartPolicy: '{{.Values.vote.restartPolicy}}'
+      schedulerName: default-scheduler

@@ -18,3 +18,7 @@ spec:
       containers:
       - image: msutter/examplevotingapp_worker
         name: worker
+        env:
+        - name: POSTGRESQL_ADMIN_PASSWORD
+          value: "pass"
+

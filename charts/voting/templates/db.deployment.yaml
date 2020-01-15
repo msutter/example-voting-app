@@ -1,0 +1,53 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"db","app.kubernetes.io/managed-by":"tilt"},"name":"db","namespace":"vote-tilt"},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"db"}},"strategy":{},"template":{"metadata":{"labels":{"app":"db","app.kubernetes.io/managed-by":"tilt","tilt.dev/pod-template-hash":"ca1f3d70193cf95c004a"}},"spec":{"containers":[{"env":[{"name":"POSTGRESQL_ADMIN_PASSWORD","value":"pass"}],"image":"centos/postgresql-95-centos7","imagePullPolicy":"IfNotPresent","name":"postgres","ports":[{"containerPort":5432,"name":"postgres"}],"resources":{},"volumeMounts":[{"mountPath":"/var/lib/postgresql/data","name":"db-data"}]}],"volumes":[{"emptyDir":{},"name":"db-data"}]}}}}
+  labels:
+    app: '{{.Release.Name}}-db'
+    app.kubernetes.io/managed-by: tilt
+    chart: '{{.Chart.Name}}-{{.Chart.Version}}'
+    heritage: '{{.Release.Service}}'
+    release: '{{.Release.Name}}'
+  name: '{{ template "fullname" . }}-db'
+  namespace: '{{.Values.db.namespace}}'
+spec:
+  progressDeadlineSeconds: 600
+  replicas: {{.Values.db.replicas}}
+  revisionHistoryLimit: {{.Values.db.revisionHistoryLimit}}
+  selector:
+    matchLabels:
+      app: '{{.Release.Name}}-db'
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: '{{.Values.db.deploymentStrategy}}'
+  template:
+    metadata:
+      labels:
+        app: '{{.Release.Name}}-db'
+        app.kubernetes.io/managed-by: tilt
+        tilt.dev/pod-template-hash: ca1f3d70193cf95c004a
+    spec:
+      volumes:
+      - emptyDir: {}
+        name: db-data
+      containers:
+      - env:
+        - name: POSTGRESQL_ADMIN_PASSWORD
+          value: '{{.Values.db.postgres.postgresqladminpassword}}'
+        image: '{{.Values.db.postgres.image}}:{{.Values.db.postgres.imageTag}}'
+        imagePullPolicy: '{{.Values.db.postgres.imagePullPolicy}}'
+        name: postgres
+        ports:
+        - containerPort: 5432
+          name: postgres
+          protocol: TCP
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: db-data
+      restartPolicy: '{{.Values.db.restartPolicy}}'
+      schedulerName: default-scheduler

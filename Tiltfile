@@ -1,5 +1,4 @@
-allow_k8s_contexts('default/api-crc-testing:6443/kube:admin')
-
+allow_k8s_contexts('vote-tilt/api-openshift-ipi-aws-labs-camptocamp-com:6443/kube:admin')
 # Deploy: tell Tilt what YAML to deploy
 # k8s_yaml('app.yaml')
 

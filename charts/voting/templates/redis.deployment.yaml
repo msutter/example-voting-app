@@ -1,0 +1,50 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"redis","app.kubernetes.io/managed-by":"tilt"},"name":"redis","namespace":"vote-tilt"},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"redis"}},"strategy":{},"template":{"metadata":{"labels":{"app":"redis","app.kubernetes.io/managed-by":"tilt","tilt.dev/pod-template-hash":"f59495d38cbd180f4979"}},"spec":{"containers":[{"image":"redis:alpine","imagePullPolicy":"IfNotPresent","name":"redis","ports":[{"containerPort":6379,"name":"redis"}],"resources":{},"volumeMounts":[{"mountPath":"/data","name":"redis-data"}]}],"volumes":[{"emptyDir":{},"name":"redis-data"}]}}}}
+  labels:
+    app: '{{.Release.Name}}-redis'
+    app.kubernetes.io/managed-by: tilt
+    chart: '{{.Chart.Name}}-{{.Chart.Version}}'
+    heritage: '{{.Release.Service}}'
+    release: '{{.Release.Name}}'
+  name: '{{ template "fullname" . }}-redis'
+  namespace: '{{.Values.redis.namespace}}'
+spec:
+  progressDeadlineSeconds: 600
+  replicas: {{.Values.redis.replicas}}
+  revisionHistoryLimit: {{.Values.redis.revisionHistoryLimit}}
+  selector:
+    matchLabels:
+      app: '{{.Release.Name}}-redis'
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: '{{.Values.redis.deploymentStrategy}}'
+  template:
+    metadata:
+      labels:
+        app: '{{.Release.Name}}-redis'
+        app.kubernetes.io/managed-by: tilt
+        tilt.dev/pod-template-hash: f59495d38cbd180f4979
+    spec:
+      volumes:
+      - emptyDir: {}
+        name: redis-data
+      containers:
+      - image: '{{.Values.redis.redis.image}}:{{.Values.redis.redis.imageTag}}'
+        imagePullPolicy: '{{.Values.redis.redis.imagePullPolicy}}'
+        name: redis
+        ports:
+        - containerPort: 6379
+          name: redis
+          protocol: TCP
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /data
+          name: redis-data
+      restartPolicy: '{{.Values.redis.restartPolicy}}'
+      schedulerName: default-scheduler
