@@ -135,15 +135,9 @@ popd
 ## Pushing the configs to the cluster
 
 ```
-pushd worker 
-odo push
-popd
-pushd vote 
-odo push
-popd
-pushd result 
-odo push
-popd
+odo push worker --context ./worker
+odo push vote --context ./vote
+odo push result --context ./result
 ```
 
 ## tips & tricks
