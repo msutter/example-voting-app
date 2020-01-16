@@ -63,7 +63,7 @@ Create the postgresql service
 ```
 odo service create postgresql-ephemeral postgresql \
   --plan default \
-  -p DATABASE_SERVICE_NAME=postgresql \
+  -p DATABASE_NAME=postgresql \
   -p MEMORY_LIMIT=512Mi \
   -p NAMESPACE=openshift \
   -p POSTGRESQL_DATABASE=vote \
@@ -77,14 +77,14 @@ Create the redis service
 ```
 odo service create redis-ephemeral redis \
 --plan default \
--p DATABASE_SERVICE_NAME=redis \
+-p DATABASE_NAME=redis \
 -p MEMORY_LIMIT=512Mi \
--p NAMESPACE=vote-odo \
+-p NAMESPACE=openshift \
 -p REDIS_PASSWORD=1234 \
 -p REDIS_VERSION=3.2
 ```
 
-### Create the app components
+### Create the app component configs
 
 ```
 odo component create nodejs:10 --context ./result
@@ -92,13 +92,13 @@ odo component create python:2.7 --context ./vote
 odo component create dotnet:2.1 --context ./worker
 ```
 
-### Add environment variables to components
+### Add environment variables to component configs
 
 Redis password for vote
 
 ```
 pushd vote
-odo config set --env database-password=1234
+odo config set --env REDIS_HOST=redis --REDIS_PASSWORD=1234
 odo config view
 popd
 ```
@@ -107,7 +107,7 @@ Postgres user, password and database for result
 
 ```
 pushd result 
-odo config set --env username=vote --env password=1234 --env database_name=vote
+odo config set --env POSTGRESQL_HOST=postgresql --env POSTGRESQL_USERNAME=vote --env POSTGRESQL_PASSWORD=1234 --env POSTGRESQL_DATABASE=vote
 odo config view
 popd
 ```
@@ -116,8 +116,33 @@ Postgres user, password and database for worker
 
 ```
 pushd worker 
-odo config set --env username=vote --env password=1234 --env database_name=vote
+odo config set --env POSTGRESQL_HOST=postgresql --env POSTGRESQL_USERNAME=vote --env POSTGRESQL_PASSWORD=1234 --env POSTGRESQL_DATABASE=vote --env REDIS_HOST=redis --env REDIS_PASSWORD=1234
 odo config view
+popd
+```
+
+## Expose frontends services
+
+```
+pushd vote 
+odo url create
+popd
+pushd result 
+odo url create
+popd
+```
+
+## Pushing the configs to the cluster
+
+```
+pushd worker 
+odo push
+popd
+pushd vote 
+odo push
+popd
+pushd result 
+odo push
 popd
 ```
 

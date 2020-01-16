@@ -10,5 +10,10 @@ ComponentSettings:
   Project: vote-odo
   Name: python-vote-zoqw
   Envs:
-  - Name: database-password
+  - Name: REDIS_HOST
+    Value: redis
+  - Name: REDIS_PASSWORD
     Value: "1234"
+  Url:
+  - Name: python-vote-zoqw-8080
+    Port: 8080

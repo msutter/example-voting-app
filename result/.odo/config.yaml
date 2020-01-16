@@ -10,9 +10,14 @@ ComponentSettings:
   Project: vote-odo
   Name: nodejs-result-mblc
   Envs:
-  - Name: username
+  - Name: POSTGRESQL_HOST
+    Value: postgresql
+  - Name: POSTGRESQL_DATABASE
     Value: vote
-  - Name: password
+  - Name: POSTGRESQL_USERNAME
+    Value: vote
+  - Name: POSTGRESQL_PASSWORD
     Value: "1234"
-  - Name: database_name
-    Value: vote
+  Url:
+  - Name: nodejs-result-mblc-8080
+    Port: 8080

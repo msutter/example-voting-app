@@ -14,10 +14,10 @@ io.set('transports', ['polling']);
 
 var port = process.env.PORT || 8080;
 
-var pgHost = process.env.POSTGRES_SERVICE_HOST || 'db';
-var pgUser = process.env.username || "postgres";
-var pgPassword = process.env.password || "";
-var pgDatabaseName = process.env.database_name || "postgres";
+var pgHost = process.env.POSTGRESQL_HOST || 'db';
+var pgUser = process.env.POSTGRESQL_USERNAME || "postgres";
+var pgPassword = process.env.POSTGRESQL_PASSWORD || "";
+var pgDatabaseName = process.env.POSTGRESQL_DATABASE || "postgres";
 
 io.sockets.on('connection', function (socket) {
 
