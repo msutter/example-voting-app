@@ -1,5 +1,4 @@
-Example Voting App with Openshift Go
-=========
+# Example Voting App with Openshift Go
 
 A simple distributed application running across multiple containers.
 
@@ -12,7 +11,77 @@ A simple distributed application running across multiple containers.
 * A [Node.js](/result) webapp which shows the results of the voting in real time
 
 
-Note
-----
+## Note
 
 The voting application only accepts one vote per client. It does not register votes if a vote has already been submitted from a client.
+
+## Prerequisites
+
+* odo is installed.
+* oc client is installed.
+* You have a running OpenShift Container Platform cluster. Developers can use CodeReady Containers (CRC) to deploy a local OpenShift Container Platform cluster quickly.
+* Service Catalog is enabled.
+
+The service catalog is deprecated in OpenShift Container Platform 4. Equivalent and better functionality is present in the Operator Framework and Operator Lifecycle Manager (OLM).
+
+Nevertheless, the Operator Framework is not yet supported with odo, so we have to enable/install the service catalog to be able to add odo services like postgresql and redis for this example.
+
+### Installing the service catalog
+
+https://docs.openshift.com/container-platform/4.2/applications/service_brokers/installing-service-catalog.html
+
+### Installing the Template Service Broker
+
+https://docs.openshift.com/container-platform/4.2/applications/service_brokers/installing-template-service-broker.html
+
+## Usage
+
+[Official doc](https://docs.openshift.com/container-platform/4.2/cli_reference/openshift_developer_cli/understanding-odo.html)
+
+### login to your openshift cluster
+
+```
+odo login -t $token
+```
+
+### Create a new project
+
+```
+odo project create vote-odo
+```
+
+### Deploy the needed services
+
+1. List the available services
+
+```
+odo catalog list services
+```
+
+Create the postgresql service
+
+```
+odo service create postgresql-ephemeral postgresql \
+  --plan default \
+  -p DATABASE_SERVICE_NAME=postgresql \
+  -p MEMORY_LIMIT=512Mi \
+  -p NAMESPACE=vote-odo \
+  -p POSTGRESQL_DATABASE=vote \
+  -p POSTGRESQL_PASSWORD=1234 \
+  -p POSTGRESQL_USER=vote \
+  -p POSTGRESQL_VERSION=10
+```
+
+Create the redis service
+
+```
+odo service create redis-ephemeral redis \
+--plan default \
+-p DATABASE_SERVICE_NAME=redis \
+-p MEMORY_LIMIT=512Mi \
+-p NAMESPACE=vote-odo \
+-p REDIS_PASSWORD= \
+-p REDIS_VERSION=3.2
+```
+
+
