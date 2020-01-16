@@ -65,7 +65,7 @@ odo service create postgresql-ephemeral postgresql \
   --plan default \
   -p DATABASE_SERVICE_NAME=postgresql \
   -p MEMORY_LIMIT=512Mi \
-  -p NAMESPACE=vote-odo \
+  -p NAMESPACE=openshift \
   -p POSTGRESQL_DATABASE=vote \
   -p POSTGRESQL_PASSWORD=1234 \
   -p POSTGRESQL_USER=vote \
@@ -80,8 +80,60 @@ odo service create redis-ephemeral redis \
 -p DATABASE_SERVICE_NAME=redis \
 -p MEMORY_LIMIT=512Mi \
 -p NAMESPACE=vote-odo \
--p REDIS_PASSWORD= \
+-p REDIS_PASSWORD=1234 \
 -p REDIS_VERSION=3.2
+```
+
+### Create the app components
+
+```
+odo component create nodejs:10 --context ./result
+odo component create python:2.7 --context ./vote
+odo component create dotnet:2.1 --context ./worker
+```
+
+### Add environment variables to components
+
+Redis password for vote
+
+```
+pushd vote
+odo config set --env database-password=1234
+odo config view
+popd
+```
+
+Postgres user, password and database for result
+
+```
+pushd result 
+odo config set --env username=vote --env password=1234 --env database_name=vote
+odo config view
+popd
+```
+
+Postgres user, password and database for worker
+
+```
+pushd worker 
+odo config set --env username=vote --env password=1234 --env database_name=vote
+odo config view
+popd
+```
+
+## tips & tricks
+
+If you have troubles removing a project (remining in Terminating state),
+delete the finalyzer lines in
+
+```
+oc edit serviceinstances -n vote-odo
+```
+
+Delete the whole project
+
+```
+
 ```
 
 

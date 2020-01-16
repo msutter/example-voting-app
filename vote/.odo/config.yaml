@@ -1,0 +1,14 @@
+kind: LocalConfig
+apiversion: odo.openshift.io/v1alpha1
+ComponentSettings:
+  Type: python:2.7
+  SourceLocation: ./
+  SourceType: local
+  Ports:
+  - 8080/TCP
+  Application: app
+  Project: vote-odo
+  Name: python-vote-zoqw
+  Envs:
+  - Name: database-password
+    Value: "1234"

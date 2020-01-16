@@ -1,0 +1,18 @@
+kind: LocalConfig
+apiversion: odo.openshift.io/v1alpha1
+ComponentSettings:
+  Type: dotnet:2.1
+  SourceLocation: ./
+  SourceType: local
+  Ports:
+  - 8080/TCP
+  Application: app
+  Project: vote-odo
+  Name: dotnet-worker-wwtf
+  Envs:
+  - Name: username
+    Value: vote
+  - Name: password
+    Value: "1234"
+  - Name: database_name
+    Value: vote
