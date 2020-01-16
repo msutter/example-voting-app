@@ -16,15 +16,15 @@ namespace Worker
         {
             try
             {
-                var pgHost = Environment.GetEnvironmentVariable("POSTGRES_SERVICE_NAME");
-                var pgUser = Environment.GetEnvironmentVariable("username");
-                var pgPassword = Environment.GetEnvironmentVariable("password");
-                var pgDatabaseName = Environment.GetEnvironmentVariable("database_name");
+                var pgHost = Environment.GetEnvironmentVariable("POSTGRESQL_HOST");
+                var pgUser = Environment.GetEnvironmentVariable("POSTGRESQL_USERNAME");
+                var pgPassword = Environment.GetEnvironmentVariable("POSTGRESQL_PASSWORD");
+                var pgDatabaseName = Environment.GetEnvironmentVariable("POSTGRESQL_DATABASE");
                 
                 var pgUri = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
                 var pgsql = OpenDbConnection($"Server={pgHost}; Database={pgDatabaseName}; Username={pgUser}; Password={pgPassword}");
 
-                var redisHost = Environment.GetEnvironmentVariable("REDIS_SERVICE_NAME");
+                var redisHost = Environment.GetEnvironmentVariable("REDIS_HOST");
                 var redisConn = OpenRedisConnection(redisHost);
                 var redis = redisConn.GetDatabase();
 
@@ -114,7 +114,7 @@ namespace Worker
         {
             // Use IP address to workaround https://github.com/StackExchange/StackExchange.Redis/issues/410
             var ipAddress = GetIp(hostname);
-            var redisPassword = Environment.GetEnvironmentVariable("database-password");
+            var redisPassword = Environment.GetEnvironmentVariable("REDIS_PASSWORD");
 
             Console.WriteLine($"Found redis at {ipAddress}");
 

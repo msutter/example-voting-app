@@ -10,9 +10,15 @@ ComponentSettings:
   Project: vote-odo
   Name: dotnet-worker-wwtf
   Envs:
-  - Name: username
-    Value: vote
-  - Name: password
+  - Name: REDIS_PASSWORD
     Value: "1234"
-  - Name: database_name
+  - Name: REDIS_HOST
+    Value: redis
+  - Name: POSTGRESQL_HOST
+    Value: postgresql
+  - Name: POSTGRESQL_USERNAME
+    Value: vote
+  - Name: POSTGRESQL_PASSWORD
+    Value: "1234"
+  - Name: POSTGRESQL_DATABASE
     Value: vote
