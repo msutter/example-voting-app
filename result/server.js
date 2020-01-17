@@ -12,8 +12,12 @@ var express = require('express'),
 
 io.set('transports', ['polling']);
 
-var port = process.env.PORT || 4000;
-var dbPass = process.env.POSTGRESQL_ADMIN_PASSWORD || '';
+var port = process.env.PORT || 8080;
+
+var pgHost = process.env.POSTGRESQL_HOST || 'db';
+var pgUser = process.env.POSTGRESQL_USERNAME || "postgres";
+var pgPassword = process.env.POSTGRESQL_PASSWORD || "";
+var pgDatabaseName = process.env.POSTGRESQL_DATABASE || "postgres";
 
 io.sockets.on('connection', function (socket) {
 
@@ -25,7 +29,7 @@ io.sockets.on('connection', function (socket) {
 });
 
 var pool = new pg.Pool({
-  connectionString: `postgres://postgres:${dbPass}@db/postgres`
+  connectionString: `postgres://${pgUser}:${pgPassword}@${pgHost}/${pgDatabaseName}`
 });
 
 async.retry(
@@ -33,6 +37,7 @@ async.retry(
   function(callback) {
     pool.connect(function(err, client, done) {
       if (err) {
+        console.error(err);
         console.error("Waiting for db");
       }
       callback(err, client);

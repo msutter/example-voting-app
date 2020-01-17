@@ -19,6 +19,15 @@ spec:
       - image: msutter/examplevotingapp_worker
         name: worker
         env:
-        - name: POSTGRESQL_ADMIN_PASSWORD
-          value: "pass"
-
+        - name: REDIS_PASSWORD
+          value: "1234"
+        - name: REDIS_HOST
+          value: redis
+        - name: POSTGRESQL_HOST
+          value: postgresql
+        - name: POSTGRESQL_USERNAME
+          value: vote
+        - name: POSTGRESQL_PASSWORD
+          value: "1234"
+        - name: POSTGRESQL_DATABASE
+          value: vote

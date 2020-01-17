@@ -21,3 +21,8 @@ spec:
         ports:
         - containerPort: 8080
           name: vote
+        env:
+        - name: REDIS_HOST
+          value: "redis"
+        - name: REDIS_PASSWORD
+          value: "1234"
