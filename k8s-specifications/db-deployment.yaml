@@ -2,31 +2,37 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: db
-  name: db
+    app: postgresql
+  name: postgresql
   namespace: vote-tilt
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: db
+      app: postgresql
   template:
     metadata:
       labels:
-        app: db
+        app: postgresql
     spec:
       containers:
       - image: centos/postgresql-95-centos7
         name: postgres
         env:
+        - name: POSTGRESQL_USER
+          value: "vote"
+        - name: POSTGRESQL_PASSWORD
+          value: "1234"
+        - name: POSTGRESQL_DATABASE
+          value: "vote"
         - name: POSTGRESQL_ADMIN_PASSWORD
-          value: "pass"
+          value: "changeme"
         ports:
         - containerPort: 5432
           name: postgres
         volumeMounts:
         - mountPath: /var/lib/postgresql/data
-          name: db-data
+          name: postgresql-data
       volumes:
-      - name: db-data
+      - name: postgresql-data
         emptyDir: {} 
