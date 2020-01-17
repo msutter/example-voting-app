@@ -8,9 +8,12 @@ metadata:
   name: vote
   namespace: vote-tilt
 spec:
-  port:
-    targetPort: vote-service
+  host: ''
   to:
     kind: Service
     name: vote
-  wildcardPolicy: None
+    weight: 100
+status:
+  ingress:
+  - routerName: default
+    wildcardPolicy: None

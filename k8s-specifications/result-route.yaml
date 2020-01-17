@@ -6,11 +6,14 @@ metadata:
     app: result
     app.kubernetes.io/managed-by: tilt
   name: result
-  namespace: result-tilt
+  namespace: vote-tilt
 spec:
-  port:
-    targetPort: result-service
+  host: ''
   to:
     kind: Service
     name: result
-  wildcardPolicy: None
+    weight: 100
+status:
+  ingress:
+  - routerName: default
+    wildcardPolicy: None

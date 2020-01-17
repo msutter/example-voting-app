@@ -10,9 +10,11 @@ k8s_yaml('k8s-specifications/redis-service.yaml')
 
 k8s_yaml('k8s-specifications/vote-deployment.yaml')
 k8s_yaml('k8s-specifications/vote-service.yaml')
+k8s_yaml('k8s-specifications/vote-route.yaml')
 
 k8s_yaml('k8s-specifications/result-deployment.yaml')
 k8s_yaml('k8s-specifications/result-service.yaml')
+k8s_yaml('k8s-specifications/result-route.yaml')
 
 k8s_yaml('k8s-specifications/worker-deployment.yaml')
 
