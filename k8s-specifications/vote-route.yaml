@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+  labels:
+    app: vote
+    app.kubernetes.io/managed-by: tilt
+  name: vote
+  namespace: vote-tilt
+spec:
+  port:
+    targetPort: vote-service
+  to:
+    kind: Service
+    name: vote
+  wildcardPolicy: None

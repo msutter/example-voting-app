@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+  labels:
+    app: result
+    app.kubernetes.io/managed-by: tilt
+  name: result
+  namespace: result-tilt
+spec:
+  port:
+    targetPort: result-service
+  to:
+    kind: Service
+    name: result
+  wildcardPolicy: None
