@@ -6024,3 +6024,39 @@ proc:
     - ~proc~stdout
     - ~proc~stderr
 
+
+[2020-01-20T15:43:36.609Z] RequestError: Error: getaddrinfo ENOTFOUND api.openshift-ipi-aws.labs.camptocamp.com api.openshift-ipi-aws.labs.camptocamp.com:6443
+    at new RequestError (/snapshot/dist/node_modules/request-promise-core/lib/errors.js:14:15)
+    at Request.module.exports.plumbing.callback (/snapshot/dist/node_modules/request-promise-core/lib/plumbing.js:87:29)
+    at Request.RP$callback [as _callback] (/snapshot/dist/node_modules/request-promise-core/lib/plumbing.js:46:31)
+    at Request.init.self.callback (/snapshot/dist/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:198:13)
+    at Request.onRequestError (/snapshot/dist/node_modules/request/request.js:881:8)
+    at ClientRequest.emit (events.js:198:13)
+    at TLSSocket.socketErrorListener (_http_client.js:392:9)
+    at TLSSocket.emit (events.js:198:13)
+    at emitErrorNT (internal/streams/destroy.js:91:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:59:3)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+Error Details:
+name: RequestError
+cause:
+  errno: ENOTFOUND
+  code: ENOTFOUND
+  syscall: getaddrinfo
+  hostname: api.openshift-ipi-aws.labs.camptocamp.com
+  host: api.openshift-ipi-aws.labs.camptocamp.com
+  port: '6443'
+error: ~cause
+options:
+  url: >-
+    https://api.openshift-ipi-aws.labs.camptocamp.com:6443/apis/apps/v1/namespaces/tgdsuma5-testing/deployments/redis-v-9ba8080c5b
+  method: GET
+  json: true
+  resolveWithFullResponse: true
+  rejectUnauthorized: false
+  headers: []
+  strictSSL: false
+  simple: true
+  transform2xxOnly: false
+

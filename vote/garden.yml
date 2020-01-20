@@ -24,6 +24,6 @@ services:
       - redis
 tests:
   - name: integ
-    args: [echo, ok]
+    args: [echo, ko]
     dependencies:
       - redis

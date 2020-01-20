@@ -1,4 +1,4 @@
-.garden/*
+.garden/
 *.log
 *.pyc
 project.lock.json
