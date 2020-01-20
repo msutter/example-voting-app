@@ -1,0 +1,18 @@
+kind: Module
+description: Postgres container for storing voting results
+type: container
+name: postgres
+image: centos/postgresql-95-centos7
+services:
+  - name: postgres
+    env:
+      POSTGRESQL_USER: vote
+      POSTGRESQL_PASSWORD: 1234
+      POSTGRESQL_DATABASE: vote
+      POSTGRESQL_ADMIN_PASSWORD: postgres
+    volumes:
+      - name: data
+        containerPath: /db-data
+    ports:
+      - name: postgres
+        containerPort: 5432

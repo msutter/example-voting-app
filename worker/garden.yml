@@ -4,6 +4,12 @@ type: container
 name: worker
 services:
   - name: worker
+    env:
+      REDIS_HOST: redis
+      POSTGRESQL_HOST: postgres
+      POSTGRESQL_USERNAME: vote
+      POSTGRESQL_PASSWORD: 1234
+      POSTGRESQL_DATABASE: vote
     dependencies:
       - redis
-      - db-init
+      - postgres

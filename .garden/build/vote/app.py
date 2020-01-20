@@ -9,7 +9,6 @@ option_a = os.getenv('OPTION_A', "Dev")
 option_b = os.getenv('OPTION_B', "Ops")
 
 redis_host= os.getenv('REDIS_HOST', "redis")
-redis_password = os.getenv('REDIS_PASSWORD', "")
 hostname = socket.gethostname()
 
 app = Flask(__name__)

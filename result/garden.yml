@@ -4,19 +4,24 @@ type: container
 name: result
 services:
   - name: result
-    args: [nodemon, server.js]
+    env:
+      POSTGRESQL_HOST: postgres
+      POSTGRESQL_USERNAME: vote
+      POSTGRESQL_PASSWORD: 1234
+      POSTGRESQL_DATABASE: vote
+    annotations:
+      app.openshift.io/connects-to: redis, postgres
     dependencies:
-      - db-init
+      - postgres
     ingresses:
       - path: /
-        port: ui
+        port: http
         hostname: result-${var.environment}.${var.domain}
     ports:
-      - name: ui
-        protocol: TCP
-        containerPort: 80
+      - name: http
+        containerPort: 8080
 tests:
   - name: integ
     args: [echo, ok]
     dependencies:
-      - db-init
+      - postgres
