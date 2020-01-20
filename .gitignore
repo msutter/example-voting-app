@@ -1,3 +1,5 @@
+.garden/*
+*.log
 *.pyc
 project.lock.json
 bin/
