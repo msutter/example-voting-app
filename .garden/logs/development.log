@@ -16166,3 +16166,91 @@ get-service-status.worker.6afab160-3b9d-11ea-b10b-975e5a2254f0:
 
 [2020-01-20T16:00:03.693Z] 
 🕑  Waiting for code changes...
+
+[2020-01-20T16:04:33.822Z] Getting status...
+
+[2020-01-20T16:04:35.638Z] Getting status... → Done
+
+[2020-01-20T16:04:37.576Z] 
+⏳  Processing...
+
+[2020-01-20T16:04:37.677Z] Syncing module sources (36 files)...
+
+[2020-01-20T16:04:37.700Z] Syncing module sources (5 files)...
+
+[2020-01-20T16:04:37.797Z] Syncing module sources (5 files)... → Done (took 0.1 sec)
+
+[2020-01-20T16:04:37.813Z] Syncing module sources (36 files)... → Done (took 0.1 sec)
+
+[2020-01-20T16:04:37.913Z] Getting build status for v-9ba8080c5b...
+
+[2020-01-20T16:04:37.922Z] Getting build status for v-9ba8080c5b... → Done (took 0 sec)
+
+[2020-01-20T16:04:37.937Z] Getting build status for v-75727e34af...
+
+[2020-01-20T16:04:37.989Z] integ tests
+
+[2020-01-20T16:04:38.004Z] integ tests → Already passed
+
+[2020-01-20T16:04:38.025Z] integ tests
+
+[2020-01-20T16:04:38.040Z] integ tests → Already passed
+
+[2020-01-20T16:04:38.101Z] Getting build status for v-b8e90208cc...
+
+[2020-01-20T16:04:38.117Z] Getting build status for v-b8e90208cc... → Done (took 0 sec)
+
+[2020-01-20T16:04:38.159Z] Getting build status for v-3bab13480e...
+
+[2020-01-20T16:04:38.181Z] Syncing module sources (3 files)...
+
+[2020-01-20T16:04:38.223Z] Syncing module sources (3 files)... → Done (took 0 sec)
+
+[2020-01-20T16:04:38.273Z] Getting build status for v-748311ac2a...
+
+[2020-01-20T16:04:38.504Z] Deploying version v-9ba8080c5b...
+
+[2020-01-20T16:04:38.528Z] Deploying version v-9ba8080c5b... → Version v-9ba8080c5b already deployed
+
+[2020-01-20T16:04:38.580Z] → Forward: redis://localhost:6379 → redis:6379 (redis)
+
+[2020-01-20T16:04:38.629Z] Deploying version v-b8e90208cc...
+
+[2020-01-20T16:04:38.650Z] Deploying version v-b8e90208cc... → Version v-b8e90208cc already deployed
+
+[2020-01-20T16:04:38.670Z] → Forward: postgres://localhost:5432 → postgres:5432 (postgres)
+
+[2020-01-20T16:04:38.970Z] Getting build status for v-75727e34af... → Done (took 1 sec)
+
+[2020-01-20T16:04:39.028Z] Getting build status for v-3bab13480e... → Done (took 0.9 sec)
+
+[2020-01-20T16:04:39.081Z] Getting build status for v-748311ac2a... → Done (took 0.8 sec)
+
+[2020-01-20T16:04:39.276Z] Deploying version v-748311ac2a...
+
+[2020-01-20T16:04:39.292Z] Deploying version v-748311ac2a... → Version v-748311ac2a already deployed
+
+[2020-01-20T16:04:39.336Z] Deploying version v-3bab13480e...
+
+[2020-01-20T16:04:39.353Z] Deploying version v-3bab13480e... → Version v-3bab13480e already deployed
+
+[2020-01-20T16:04:39.372Z] → Ingress: http://tgdsuma5-testingvote.apps.openshift-ipi-aws.labs.camptocamp.com
+
+[2020-01-20T16:04:39.391Z] → Forward: http://localhost:8080 → vote:8080 (http)
+
+[2020-01-20T16:04:39.414Z] Deploying version v-75727e34af...
+
+[2020-01-20T16:04:39.432Z] Deploying version v-75727e34af... → Version v-75727e34af already deployed
+
+[2020-01-20T16:04:39.454Z] → Ingress: http://result-testing.apps.openshift-ipi-aws.labs.camptocamp.com
+
+[2020-01-20T16:04:39.472Z] → Forward: http://localhost:52411 → result:8080 (http)
+
+[2020-01-20T16:04:39.494Z] 
+🕑  Waiting for code changes...
+
+[2020-01-20T16:04:47.332Z] 
+⏳  Processing...
+
+[2020-01-20T16:04:48.968Z] 
+🕑  Waiting for code changes...
