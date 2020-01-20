@@ -1,0 +1,985 @@
+
+[2020-01-20T13:20:23.836Z] Error: Configured provider 'ocp' has not been registered.
+    at Object.loadPlugins (/snapshot/dist/build/src/plugins.js:0)
+    at Garden.<anonymous> (/snapshot/dist/build/src/garden.js:0)
+    at Generator.next (<anonymous>)
+    at __awaiter (/snapshot/dist/build/src/garden.js:0)
+    at new Promise (<anonymous>)
+    at __awaiter (/snapshot/dist/build/src/garden.js:0)
+    at getPlugins.__awaiter.asyncLock.acquire (/snapshot/dist/build/src/garden.js:0)
+    at /snapshot/dist/node_modules/async-lock/lib/index.js:125:12
+    at AsyncLock._promiseTry (/snapshot/dist/node_modules/async-lock/lib/index.js:249:31)
+    at exec (/snapshot/dist/node_modules/async-lock/lib/index.js:124:9)
+    at AsyncLock.acquire (/snapshot/dist/node_modules/async-lock/lib/index.js:140:3)
+    at Garden.<anonymous> (/snapshot/dist/build/src/garden.js:0)
+    at Generator.next (<anonymous>)
+    at __awaiter (/snapshot/dist/build/src/garden.js:0)
+    at new Promise (<anonymous>)
+    at __awaiter (/snapshot/dist/build/src/garden.js:0)
+    at Garden.getPlugins (/snapshot/dist/build/src/garden.js:0)
+    at Garden.<anonymous> (/snapshot/dist/build/src/garden.js:0)
+    at Generator.next (<anonymous>)
+    at __awaiter (/snapshot/dist/build/src/garden.js:0)
+    at new Promise (<anonymous>)
+    at __awaiter (/snapshot/dist/build/src/garden.js:0)
+    at resolveProviders.__awaiter.asyncLock.acquire (/snapshot/dist/build/src/garden.js:0)
+    at /snapshot/dist/node_modules/async-lock/lib/index.js:125:12
+    at AsyncLock._promiseTry (/snapshot/dist/node_modules/async-lock/lib/index.js:249:31)
+    at exec (/snapshot/dist/node_modules/async-lock/lib/index.js:124:9)
+    at AsyncLock.acquire (/snapshot/dist/node_modules/async-lock/lib/index.js:140:3)
+    at Garden.<anonymous> (/snapshot/dist/build/src/garden.js:0)
+Error Details:
+name: ocp
+availablePlugins:
+  - conftest
+  - conftest-container
+  - conftest-kubernetes
+  - container
+  - exec
+  - google-app-engine
+  - google-cloud-function
+  - hadolint
+  - local-google-cloud-functions
+  - kubernetes
+  - local-kubernetes
+  - maven-container
+  - npm-package
+  - openfaas
+  - terraform
+
+
+[2020-01-20T13:20:43.721Z] Error: Configured provider 'ocp' has not been registered.
+    at Object.loadPlugins (/snapshot/dist/build/src/plugins.js:0)
+    at Garden.<anonymous> (/snapshot/dist/build/src/garden.js:0)
+    at Generator.next (<anonymous>)
+    at __awaiter (/snapshot/dist/build/src/garden.js:0)
+    at new Promise (<anonymous>)
+    at __awaiter (/snapshot/dist/build/src/garden.js:0)
+    at getPlugins.__awaiter.asyncLock.acquire (/snapshot/dist/build/src/garden.js:0)
+    at /snapshot/dist/node_modules/async-lock/lib/index.js:125:12
+    at AsyncLock._promiseTry (/snapshot/dist/node_modules/async-lock/lib/index.js:249:31)
+    at exec (/snapshot/dist/node_modules/async-lock/lib/index.js:124:9)
+    at AsyncLock.acquire (/snapshot/dist/node_modules/async-lock/lib/index.js:140:3)
+    at Garden.<anonymous> (/snapshot/dist/build/src/garden.js:0)
+    at Generator.next (<anonymous>)
+    at __awaiter (/snapshot/dist/build/src/garden.js:0)
+    at new Promise (<anonymous>)
+    at __awaiter (/snapshot/dist/build/src/garden.js:0)
+    at Garden.getPlugins (/snapshot/dist/build/src/garden.js:0)
+    at Garden.<anonymous> (/snapshot/dist/build/src/garden.js:0)
+    at Generator.next (<anonymous>)
+    at __awaiter (/snapshot/dist/build/src/garden.js:0)
+    at new Promise (<anonymous>)
+    at __awaiter (/snapshot/dist/build/src/garden.js:0)
+    at resolveProviders.__awaiter.asyncLock.acquire (/snapshot/dist/build/src/garden.js:0)
+    at /snapshot/dist/node_modules/async-lock/lib/index.js:125:12
+    at AsyncLock._promiseTry (/snapshot/dist/node_modules/async-lock/lib/index.js:249:31)
+    at exec (/snapshot/dist/node_modules/async-lock/lib/index.js:124:9)
+    at AsyncLock.acquire (/snapshot/dist/node_modules/async-lock/lib/index.js:140:3)
+    at Garden.<anonymous> (/snapshot/dist/build/src/garden.js:0)
+Error Details:
+name: ocp
+availablePlugins:
+  - conftest
+  - conftest-container
+  - conftest-kubernetes
+  - container
+  - exec
+  - google-app-engine
+  - google-cloud-function
+  - hadolint
+  - local-google-cloud-functions
+  - kubernetes
+  - local-kubernetes
+  - maven-container
+  - npm-package
+  - openfaas
+  - terraform
+
+
+[2020-01-20T13:21:36.412Z] Error: Configured provider 'remote' has not been registered.
+    at Object.loadPlugins (/snapshot/dist/build/src/plugins.js:0)
+    at Garden.<anonymous> (/snapshot/dist/build/src/garden.js:0)
+    at Generator.next (<anonymous>)
+    at __awaiter (/snapshot/dist/build/src/garden.js:0)
+    at new Promise (<anonymous>)
+    at __awaiter (/snapshot/dist/build/src/garden.js:0)
+    at getPlugins.__awaiter.asyncLock.acquire (/snapshot/dist/build/src/garden.js:0)
+    at /snapshot/dist/node_modules/async-lock/lib/index.js:125:12
+    at AsyncLock._promiseTry (/snapshot/dist/node_modules/async-lock/lib/index.js:249:31)
+    at exec (/snapshot/dist/node_modules/async-lock/lib/index.js:124:9)
+    at AsyncLock.acquire (/snapshot/dist/node_modules/async-lock/lib/index.js:140:3)
+    at Garden.<anonymous> (/snapshot/dist/build/src/garden.js:0)
+    at Generator.next (<anonymous>)
+    at __awaiter (/snapshot/dist/build/src/garden.js:0)
+    at new Promise (<anonymous>)
+    at __awaiter (/snapshot/dist/build/src/garden.js:0)
+    at Garden.getPlugins (/snapshot/dist/build/src/garden.js:0)
+    at Garden.<anonymous> (/snapshot/dist/build/src/garden.js:0)
+    at Generator.next (<anonymous>)
+    at __awaiter (/snapshot/dist/build/src/garden.js:0)
+    at new Promise (<anonymous>)
+    at __awaiter (/snapshot/dist/build/src/garden.js:0)
+    at resolveProviders.__awaiter.asyncLock.acquire (/snapshot/dist/build/src/garden.js:0)
+    at /snapshot/dist/node_modules/async-lock/lib/index.js:125:12
+    at AsyncLock._promiseTry (/snapshot/dist/node_modules/async-lock/lib/index.js:249:31)
+    at exec (/snapshot/dist/node_modules/async-lock/lib/index.js:124:9)
+    at AsyncLock.acquire (/snapshot/dist/node_modules/async-lock/lib/index.js:140:3)
+    at Garden.<anonymous> (/snapshot/dist/build/src/garden.js:0)
+Error Details:
+name: remote
+availablePlugins:
+  - conftest
+  - conftest-container
+  - conftest-kubernetes
+  - container
+  - exec
+  - google-app-engine
+  - google-cloud-function
+  - hadolint
+  - local-google-cloud-functions
+  - kubernetes
+  - local-kubernetes
+  - maven-container
+  - npm-package
+  - openfaas
+  - terraform
+
+
+[2020-01-20T13:23:12.280Z] Error: Invalid template string ${local.env.USER || local.username}-${var.app-namespace}.${var.app-domain}: Unable to resolve one or more keys.
+    at /snapshot/dist/build/src/template-string.js:0
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/dist/build/src/template-string.js:0)
+Error Details:
+err:
+  detail:
+    text: '${local.env.USER || local.username}-${var.app-namespace}.${var.app-domain}'
+  type: template-string
+
+
+[2020-01-20T13:23:12.293Z] Error: Failed resolving one or more providers:
+- kubernetes
+    at Garden.<anonymous> (/snapshot/dist/build/src/garden.js:0)
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/dist/build/src/garden.js:0)
+Error Details:
+rawConfigs:
+  - name: exec
+  - name: container
+  - name: kubernetes
+    environments:
+      - testing
+    context: 'default/api-openshift-ipi-aws-labs-camptocamp-com:6443/kube:admin'
+    namespace: '${local.env.USER || local.username}-${var.app-namespace}'
+    defaultHostname: '${local.env.USER || local.username}-${var.app-namespace}.${var.app-domain}'
+    buildMode: local-docker
+    deploymentRegistry:
+      hostname: docker.io
+      namespace: msutter
+taskResults:
+  resolve-provider.exec:
+    type: resolve-provider
+    key: resolve-provider.exec
+    name: exec
+    description: resolving provider exec
+    completedAt: '2020-01-20T13:23:12.256Z'
+    batchId: 4ca3d4af-7eb1-418c-b139-5ec1f923d678
+    output:
+      name: exec
+      dependencies: []
+      moduleConfigs: []
+      config:
+        name: exec
+        path: /Users/tgdsuma5/src/github/msutter/example-voting-app
+      status:
+        ready: true
+        outputs: {}
+    dependencyResults: {}
+  resolve-provider.container:
+    type: resolve-provider
+    key: resolve-provider.container
+    name: container
+    description: resolving provider container
+    completedAt: '2020-01-20T13:23:12.256Z'
+    batchId: 4ca3d4af-7eb1-418c-b139-5ec1f923d678
+    output:
+      name: container
+      dependencies: []
+      moduleConfigs: []
+      config:
+        name: container
+        path: /Users/tgdsuma5/src/github/msutter/example-voting-app
+      status:
+        ready: true
+        outputs: {}
+    dependencyResults: {}
+  resolve-provider.kubernetes:
+    type: resolve-provider
+    description: resolving provider kubernetes
+    key: resolve-provider.kubernetes
+    name: kubernetes
+    error:
+      detail:
+        err:
+          detail:
+            text: >-
+              ${local.env.USER ||
+              local.username}-${var.app-namespace}.${var.app-domain}
+          type: template-string
+      type: template-string
+    completedAt: '2020-01-20T13:23:12.273Z'
+    batchId: 4ca3d4af-7eb1-418c-b139-5ec1f923d678
+messages:
+  - >-
+    - kubernetes: Invalid template string ${local.env.USER ||
+    local.username}-${var.app-namespace}.${var.app-domain}: Unable to resolve
+    one or more keys.
+
+
+[2020-01-20T13:24:39.797Z] Error: Invalid template string ${local.env.USER || local.username}-${var.app-namespace}.${var.app-domain}: Unable to resolve one or more keys.
+    at /snapshot/dist/build/src/template-string.js:0
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/dist/build/src/template-string.js:0)
+Error Details:
+err:
+  detail:
+    text: '${local.env.USER || local.username}-${var.app-namespace}.${var.app-domain}'
+  type: template-string
+
+
+[2020-01-20T13:24:39.811Z] Error: Failed resolving one or more providers:
+- kubernetes
+    at Garden.<anonymous> (/snapshot/dist/build/src/garden.js:0)
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/dist/build/src/garden.js:0)
+Error Details:
+rawConfigs:
+  - name: exec
+  - name: container
+  - name: kubernetes
+    environments:
+      - testing
+    context: 'default/api-openshift-ipi-aws-labs-camptocamp-com:6443/kube:admin'
+    namespace: '${local.env.USER || local.username}-${var.app-namespace}'
+    defaultHostname: '${local.env.USER || local.username}-${var.app-namespace}.${var.app-domain}'
+    buildMode: local-docker
+    deploymentRegistry:
+      hostname: docker.io
+      namespace: msutter
+taskResults:
+  resolve-provider.exec:
+    type: resolve-provider
+    key: resolve-provider.exec
+    name: exec
+    description: resolving provider exec
+    completedAt: '2020-01-20T13:24:39.768Z'
+    batchId: 452d73f6-54e9-4089-abbc-bfcf6d27f19f
+    output:
+      name: exec
+      dependencies: []
+      moduleConfigs: []
+      config:
+        name: exec
+        path: /Users/tgdsuma5/src/github/msutter/example-voting-app
+      status:
+        ready: true
+        outputs: {}
+    dependencyResults: {}
+  resolve-provider.container:
+    type: resolve-provider
+    key: resolve-provider.container
+    name: container
+    description: resolving provider container
+    completedAt: '2020-01-20T13:24:39.768Z'
+    batchId: 452d73f6-54e9-4089-abbc-bfcf6d27f19f
+    output:
+      name: container
+      dependencies: []
+      moduleConfigs: []
+      config:
+        name: container
+        path: /Users/tgdsuma5/src/github/msutter/example-voting-app
+      status:
+        ready: true
+        outputs: {}
+    dependencyResults: {}
+  resolve-provider.kubernetes:
+    type: resolve-provider
+    description: resolving provider kubernetes
+    key: resolve-provider.kubernetes
+    name: kubernetes
+    error:
+      detail:
+        err:
+          detail:
+            text: >-
+              ${local.env.USER ||
+              local.username}-${var.app-namespace}.${var.app-domain}
+          type: template-string
+      type: template-string
+    completedAt: '2020-01-20T13:24:39.788Z'
+    batchId: 452d73f6-54e9-4089-abbc-bfcf6d27f19f
+messages:
+  - >-
+    - kubernetes: Invalid template string ${local.env.USER ||
+    local.username}-${var.app-namespace}.${var.app-domain}: Unable to resolve
+    one or more keys.
+
+
+[2020-01-20T13:28:09.386Z] Error: Invalid template string ${local.env.USER || local.username}-${environment.var.app-namespace}.${environment.var.app-domain}: Unable to resolve one or more keys.
+    at /snapshot/dist/build/src/template-string.js:0
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/dist/build/src/template-string.js:0)
+Error Details:
+err:
+  detail:
+    text: >-
+      ${local.env.USER ||
+      local.username}-${environment.var.app-namespace}.${environment.var.app-domain}
+  type: template-string
+
+
+[2020-01-20T13:28:09.401Z] Error: Failed resolving one or more providers:
+- kubernetes
+    at Garden.<anonymous> (/snapshot/dist/build/src/garden.js:0)
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/dist/build/src/garden.js:0)
+Error Details:
+rawConfigs:
+  - name: exec
+  - name: container
+  - name: kubernetes
+    environments:
+      - testing
+    context: 'default/api-openshift-ipi-aws-labs-camptocamp-com:6443/kube:admin'
+    namespace: '${local.env.USER || local.username}-${environment.var.app-namespace}'
+    defaultHostname: >-
+      ${local.env.USER ||
+      local.username}-${environment.var.app-namespace}.${environment.var.app-domain}
+    buildMode: local-docker
+    deploymentRegistry:
+      hostname: docker.io
+      namespace: msutter
+taskResults:
+  resolve-provider.exec:
+    type: resolve-provider
+    key: resolve-provider.exec
+    name: exec
+    description: resolving provider exec
+    completedAt: '2020-01-20T13:28:09.361Z'
+    batchId: e575e9de-9cfc-442b-963e-9fecf4816794
+    output:
+      name: exec
+      dependencies: []
+      moduleConfigs: []
+      config:
+        name: exec
+        path: /Users/tgdsuma5/src/github/msutter/example-voting-app
+      status:
+        ready: true
+        outputs: {}
+    dependencyResults: {}
+  resolve-provider.container:
+    type: resolve-provider
+    key: resolve-provider.container
+    name: container
+    description: resolving provider container
+    completedAt: '2020-01-20T13:28:09.361Z'
+    batchId: e575e9de-9cfc-442b-963e-9fecf4816794
+    output:
+      name: container
+      dependencies: []
+      moduleConfigs: []
+      config:
+        name: container
+        path: /Users/tgdsuma5/src/github/msutter/example-voting-app
+      status:
+        ready: true
+        outputs: {}
+    dependencyResults: {}
+  resolve-provider.kubernetes:
+    type: resolve-provider
+    description: resolving provider kubernetes
+    key: resolve-provider.kubernetes
+    name: kubernetes
+    error:
+      detail:
+        err:
+          detail:
+            text: >-
+              ${local.env.USER ||
+              local.username}-${environment.var.app-namespace}.${environment.var.app-domain}
+          type: template-string
+      type: template-string
+    completedAt: '2020-01-20T13:28:09.378Z'
+    batchId: e575e9de-9cfc-442b-963e-9fecf4816794
+messages:
+  - >-
+    - kubernetes: Invalid template string ${local.env.USER ||
+    local.username}-${environment.var.app-namespace}.${environment.var.app-domain}:
+    Unable to resolve one or more keys.
+
+
+[2020-01-20T13:29:21.203Z] Error: Invalid template string ${local.env.USER || local.username}-${environment.var.app-namespace}.${environment.var.app-domain}: Unable to resolve one or more keys.
+    at /snapshot/dist/build/src/template-string.js:0
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/dist/build/src/template-string.js:0)
+Error Details:
+err:
+  detail:
+    text: >-
+      ${local.env.USER ||
+      local.username}-${environment.var.app-namespace}.${environment.var.app-domain}
+  type: template-string
+
+
+[2020-01-20T13:29:21.215Z] Error: Failed resolving one or more providers:
+- kubernetes
+    at Garden.<anonymous> (/snapshot/dist/build/src/garden.js:0)
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/dist/build/src/garden.js:0)
+Error Details:
+rawConfigs:
+  - name: exec
+  - name: container
+  - name: kubernetes
+    environments:
+      - testing
+    context: 'default/api-openshift-ipi-aws-labs-camptocamp-com:6443/kube:admin'
+    namespace: '${local.env.USER || local.username}-${environment.var.app-namespace}'
+    defaultHostname: >-
+      ${local.env.USER ||
+      local.username}-${environment.var.app-namespace}.${environment.var.app-domain}
+    buildMode: local-docker
+    deploymentRegistry:
+      hostname: docker.io
+      namespace: msutter
+taskResults:
+  resolve-provider.exec:
+    type: resolve-provider
+    key: resolve-provider.exec
+    name: exec
+    description: resolving provider exec
+    completedAt: '2020-01-20T13:29:21.174Z'
+    batchId: b34b25b6-04df-4fb5-8123-5845bf7a7b2c
+    output:
+      name: exec
+      dependencies: []
+      moduleConfigs: []
+      config:
+        name: exec
+        path: /Users/tgdsuma5/src/github/msutter/example-voting-app
+      status:
+        ready: true
+        outputs: {}
+    dependencyResults: {}
+  resolve-provider.container:
+    type: resolve-provider
+    key: resolve-provider.container
+    name: container
+    description: resolving provider container
+    completedAt: '2020-01-20T13:29:21.174Z'
+    batchId: b34b25b6-04df-4fb5-8123-5845bf7a7b2c
+    output:
+      name: container
+      dependencies: []
+      moduleConfigs: []
+      config:
+        name: container
+        path: /Users/tgdsuma5/src/github/msutter/example-voting-app
+      status:
+        ready: true
+        outputs: {}
+    dependencyResults: {}
+  resolve-provider.kubernetes:
+    type: resolve-provider
+    description: resolving provider kubernetes
+    key: resolve-provider.kubernetes
+    name: kubernetes
+    error:
+      detail:
+        err:
+          detail:
+            text: >-
+              ${local.env.USER ||
+              local.username}-${environment.var.app-namespace}.${environment.var.app-domain}
+          type: template-string
+      type: template-string
+    completedAt: '2020-01-20T13:29:21.195Z'
+    batchId: b34b25b6-04df-4fb5-8123-5845bf7a7b2c
+messages:
+  - >-
+    - kubernetes: Invalid template string ${local.env.USER ||
+    local.username}-${environment.var.app-namespace}.${environment.var.app-domain}:
+    Unable to resolve one or more keys.
+
+
+[2020-01-20T13:30:32.056Z] Error: Error validating module 'result' (result/garden.yml): key .services[0][name] with value "result-tgdsuma5-devops-vote-testing.apps.openshift-ipi-aws.labs.camptocamp.com" fails to match the required pattern: /^(?!garden)(?=.{1,63}$)[a-z][a-z0-9]*(-[a-z0-9]+)*$/
+    at validate (/snapshot/dist/build/src/config/validation.js:0)
+    at Object.validateWithPath (/snapshot/dist/build/src/config/validation.js:0)
+    at Object.<anonymous> (/snapshot/dist/build/src/resolve-module.js:0)
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/dist/build/src/resolve-module.js:0)
+Error Details:
+value:
+  services:
+    - name: >-
+        result-tgdsuma5-devops-vote-testing.apps.openshift-ipi-aws.labs.camptocamp.com
+      args:
+        - nodemon
+        - server.js
+      dependencies:
+        - db-init
+      ingresses:
+        - path: /
+          port: ui
+          hostname: >-
+            result-tgdsuma5-devops-vote-testing.apps.openshift-ipi-aws.labs.camptocamp.com
+      ports:
+        - name: ui
+          protocol: TCP
+          containerPort: 80
+  tests:
+    - name: integ
+      args:
+        - echo
+        - ok
+      dependencies:
+        - db-init
+  build:
+    dependencies: []
+context: module 'result' (result/garden.yml)
+errorDescription: "key \e[4m.services[0][name]\e[24m with value \"result-tgdsuma5-devops-vote-testing.apps.openshift-ipi-aws.labs.camptocamp.com\" fails to match the required pattern: /^(?!garden)(?=.{1,63}$)[a-z][a-z0-9]*(-[a-z0-9]+)*$/"
+errorDetails:
+  - message: "key \e[4m.services[0][name]\e[24m with value \"result-tgdsuma5-devops-vote-testing.apps.openshift-ipi-aws.labs.camptocamp.com\" fails to match the required pattern: /^(?!garden)(?=.{1,63}$)[a-z][a-z0-9]*(-[a-z0-9]+)*$/"
+    path:
+      - services
+      - 0
+      - name
+    type: string.regex.base
+    context:
+      pattern: {}
+      value: >-
+        result-tgdsuma5-devops-vote-testing.apps.openshift-ipi-aws.labs.camptocamp.com
+      key: name
+      label: name
+
+
+[2020-01-20T13:31:12.647Z] Error: Error validating module 'result' (result/garden.yml): key .services[0][name] with value "result-tgdsuma5-devops-vote-testing.apps.openshift-ipi-aws.labs.camptocamp.com" fails to match the required pattern: /^(?!garden)(?=.{1,63}$)[a-z][a-z0-9]*(-[a-z0-9]+)*$/
+    at validate (/snapshot/dist/build/src/config/validation.js:0)
+    at Object.validateWithPath (/snapshot/dist/build/src/config/validation.js:0)
+    at Object.<anonymous> (/snapshot/dist/build/src/resolve-module.js:0)
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/dist/build/src/resolve-module.js:0)
+Error Details:
+value:
+  services:
+    - name: >-
+        result-tgdsuma5-devops-vote-testing.apps.openshift-ipi-aws.labs.camptocamp.com
+      args:
+        - nodemon
+        - server.js
+      dependencies:
+        - db-init
+      ingresses:
+        - path: /
+          port: ui
+          hostname: >-
+            result-tgdsuma5-devops-vote-testing.apps.openshift-ipi-aws.labs.camptocamp.com
+      ports:
+        - name: ui
+          protocol: TCP
+          containerPort: 80
+  tests:
+    - name: integ
+      args:
+        - echo
+        - ok
+      dependencies:
+        - db-init
+  build:
+    dependencies: []
+context: module 'result' (result/garden.yml)
+errorDescription: "key \e[4m.services[0][name]\e[24m with value \"result-tgdsuma5-devops-vote-testing.apps.openshift-ipi-aws.labs.camptocamp.com\" fails to match the required pattern: /^(?!garden)(?=.{1,63}$)[a-z][a-z0-9]*(-[a-z0-9]+)*$/"
+errorDetails:
+  - message: "key \e[4m.services[0][name]\e[24m with value \"result-tgdsuma5-devops-vote-testing.apps.openshift-ipi-aws.labs.camptocamp.com\" fails to match the required pattern: /^(?!garden)(?=.{1,63}$)[a-z][a-z0-9]*(-[a-z0-9]+)*$/"
+    path:
+      - services
+      - 0
+      - name
+    type: string.regex.base
+    context:
+      pattern: {}
+      value: >-
+        result-tgdsuma5-devops-vote-testing.apps.openshift-ipi-aws.labs.camptocamp.com
+      key: name
+      label: name
+
+
+[2020-01-20T13:44:31.391Z] Error: Invalid template string ${local.env.USER || local.username}.${var.app-domain}: Unable to resolve one or more keys.
+    at /snapshot/dist/build/src/template-string.js:0
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/dist/build/src/template-string.js:0)
+Error Details:
+err:
+  detail:
+    text: '${local.env.USER || local.username}.${var.app-domain}'
+  type: template-string
+
+
+[2020-01-20T13:44:31.400Z] Error: Failed resolving one or more providers:
+- kubernetes
+    at Garden.<anonymous> (/snapshot/dist/build/src/garden.js:0)
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/dist/build/src/garden.js:0)
+Error Details:
+rawConfigs:
+  - name: exec
+  - name: container
+  - name: kubernetes
+    environments:
+      - testing
+    context: 'default/api-openshift-ipi-aws-labs-camptocamp-com:6443/kube:admin'
+    namespace: '${local.env.USER || local.username}-${environment.name}'
+    defaultHostname: '${local.env.USER || local.username}.${var.app-domain}'
+    buildMode: local-docker
+    deploymentRegistry:
+      hostname: docker.io
+      namespace: msutter
+taskResults:
+  resolve-provider.exec:
+    type: resolve-provider
+    key: resolve-provider.exec
+    name: exec
+    description: resolving provider exec
+    completedAt: '2020-01-20T13:44:31.372Z'
+    batchId: 00b9ec57-e465-42fd-8757-f70fd9fd0025
+    output:
+      name: exec
+      dependencies: []
+      moduleConfigs: []
+      config:
+        name: exec
+        path: /Users/tgdsuma5/src/github/msutter/example-voting-app
+      status:
+        ready: true
+        outputs: {}
+    dependencyResults: {}
+  resolve-provider.container:
+    type: resolve-provider
+    key: resolve-provider.container
+    name: container
+    description: resolving provider container
+    completedAt: '2020-01-20T13:44:31.372Z'
+    batchId: 00b9ec57-e465-42fd-8757-f70fd9fd0025
+    output:
+      name: container
+      dependencies: []
+      moduleConfigs: []
+      config:
+        name: container
+        path: /Users/tgdsuma5/src/github/msutter/example-voting-app
+      status:
+        ready: true
+        outputs: {}
+    dependencyResults: {}
+  resolve-provider.kubernetes:
+    type: resolve-provider
+    description: resolving provider kubernetes
+    key: resolve-provider.kubernetes
+    name: kubernetes
+    error:
+      detail:
+        err:
+          detail:
+            text: '${local.env.USER || local.username}.${var.app-domain}'
+          type: template-string
+      type: template-string
+    completedAt: '2020-01-20T13:44:31.384Z'
+    batchId: 00b9ec57-e465-42fd-8757-f70fd9fd0025
+messages:
+  - >-
+    - kubernetes: Invalid template string ${local.env.USER ||
+    local.username}.${var.app-domain}: Unable to resolve one or more keys.
+
+
+[2020-01-20T13:45:58.769Z] Error: Invalid template string result-${local.env.USER || local.username}-${var.app-namespace}.${var.app-domain}: Unable to resolve one or more keys.
+    at /snapshot/dist/build/src/template-string.js:0
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/dist/build/src/template-string.js:0)
+Error Details:
+err:
+  detail:
+    text: >-
+      result-${local.env.USER ||
+      local.username}-${var.app-namespace}.${var.app-domain}
+  type: template-string
+
+
+[2020-01-20T13:49:52.102Z] Error: Invalid template string result-${local.env.USER || local.username}-${var.app-namespace}.${var.app-domain}: Unable to resolve one or more keys.
+    at /snapshot/dist/build/src/template-string.js:0
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/dist/build/src/template-string.js:0)
+Error Details:
+err:
+  detail:
+    text: >-
+      result-${local.env.USER ||
+      local.username}-${var.app-namespace}.${var.app-domain}
+  type: template-string
+
+
+[2020-01-20T13:50:29.612Z] Error: Invalid template string result-${local.env.USER || local.username}-${var.app-namespace}.${var.app-domain}: Unable to resolve one or more keys.
+    at /snapshot/dist/build/src/template-string.js:0
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/dist/build/src/template-string.js:0)
+Error Details:
+err:
+  detail:
+    text: >-
+      result-${local.env.USER ||
+      local.username}-${var.app-namespace}.${var.app-domain}
+  type: template-string
+
+
+[2020-01-20T13:51:17.712Z] Error: Unknown dependencies detected.
+
+  Service 'vote' (in module 'vote'): Unknown service or task 'api' referenced in dependencies.
+
+  Test 'integ' (in module 'vote'): Unknown service or task 'api' referenced in dependencies.
+
+    at Object.validateDependencies (/snapshot/dist/build/src/util/validate-dependencies.js:0)
+    at ConfigGraph.validateDependencies (/snapshot/dist/build/src/config-graph.js:0)
+    at new ConfigGraph (/snapshot/dist/build/src/config-graph.js:0)
+    at Garden.<anonymous> (/snapshot/dist/build/src/garden.js:0)
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/dist/build/src/garden.js:0)
+Error Details:
+unknownDependencies:
+  - >-
+    Service 'vote' (in module 'vote'): Unknown service or task 'api' referenced
+    in dependencies.
+  - >-
+    Test 'integ' (in module 'vote'): Unknown service or task 'api' referenced in
+    dependencies.
+availableModules:
+  - postgres
+  - redis
+  - result
+  - vote
+  - worker
+availableServicesAndTasks:
+  - db
+  - redis
+  - result
+  - vote
+  - worker
+  - db-init
+  - db-clear
+
+
+[2020-01-20T13:52:20.369Z] Error: Error deploying db: CrashLoopBackOff - Back-off 10s restarting failed container=db pod=db-v-a89a90d665-89dd4857-7sk7p_tgdsuma5-testing(0613ac55-3b8c-11ea-a7c7-0235647d7408)
+
+━━━ Events ━━━
+Deployment db-v-a89a90d665: ScalingReplicaSet - Scaled up replica set db-v-a89a90d665-89dd4857 to 1
+Pod db-v-a89a90d665-89dd4857-7sk7p: Scheduled - Successfully assigned tgdsuma5-testing/db-v-a89a90d665-89dd4857-7sk7p to ip-10-0-151-144.eu-west-1.compute.internal
+Pod db-v-a89a90d665-89dd4857-7sk7p: Pulling - Pulling image "postgres:11.4-alpine"
+Pod db-v-a89a90d665-89dd4857-7sk7p: Pulled - Successfully pulled image "postgres:11.4-alpine"
+Pod db-v-a89a90d665-89dd4857-7sk7p: Created - Created container db
+Pod db-v-a89a90d665-89dd4857-7sk7p: Started - Started container db
+Pod db-v-a89a90d665-89dd4857-7sk7p: Pulled - Container image "postgres:11.4-alpine" already present on machine
+Pod db-v-a89a90d665-89dd4857-7sk7p: BackOff - Back-off restarting failed container
+
+━━━ Pod logs ━━━
+<Showing last 20 lines per pod in this Deployment. Run the following command for complete logs>
+$ kubectl -n tgdsuma5-testing --context=default/api-openshift-ipi-aws-labs-camptocamp-com:6443/kube:admin logs deployment/db-v-a89a90d665
+
+****** db-v-a89a90d665-89dd4857-7sk7p ******
+The files belonging to this database system will be owned by user "1000740000".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.utf8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/data ... initdb: could not change permissions of directory "/var/lib/postgresql/data": Operation not permitted
+
+    at Object.<anonymous> (/snapshot/dist/build/src/plugins/kubernetes/status/status.js:0)
+    at Generator.next (<anonymous>)
+    at fulfilled (/snapshot/dist/build/src/plugins/kubernetes/status/status.js:0)
+Error Details:
+serviceName: db
+status:
+  state: unhealthy
+  lastMessage: >-
+    CrashLoopBackOff - Back-off 10s restarting failed container=db
+    pod=db-v-a89a90d665-89dd4857-7sk7p_tgdsuma5-testing(0613ac55-3b8c-11ea-a7c7-0235647d7408)
+  logs: "\e[37m━━━ Events ━━━\e[39m\n\e[94mDeployment db-v-a89a90d665:\e[39m \e[37mScalingReplicaSet - Scaled up replica set db-v-a89a90d665-89dd4857 to 1\e[39m\n\e[94mPod db-v-a89a90d665-89dd4857-7sk7p:\e[39m \e[37mScheduled - Successfully assigned tgdsuma5-testing/db-v-a89a90d665-89dd4857-7sk7p to ip-10-0-151-144.eu-west-1.compute.internal\e[39m\n\e[94mPod db-v-a89a90d665-89dd4857-7sk7p:\e[39m \e[37mPulling - Pulling image \"postgres:11.4-alpine\"\e[39m\n\e[94mPod db-v-a89a90d665-89dd4857-7sk7p:\e[39m \e[37mPulled - Successfully pulled image \"postgres:11.4-alpine\"\e[39m\n\e[94mPod db-v-a89a90d665-89dd4857-7sk7p:\e[39m \e[37mCreated - Created container db\e[39m\n\e[94mPod db-v-a89a90d665-89dd4857-7sk7p:\e[39m \e[37mStarted - Started container db\e[39m\n\e[94mPod db-v-a89a90d665-89dd4857-7sk7p:\e[39m \e[37mPulled - Container image \"postgres:11.4-alpine\" already present on machine\e[39m\n\e[94mPod db-v-a89a90d665-89dd4857-7sk7p:\e[39m \e[33mBackOff - Back-off restarting failed container\e[39m\e[37m\e[39m\n\e[37m\e[39m\n\e[37m━━━ Pod logs ━━━\e[39m\n\e[37m\e[39m\e[90m<Showing last 20 lines per pod in this Deployment. Run the following command for complete logs>\e[39m\n\e[90m$ kubectl -n tgdsuma5-testing --context=default/api-openshift-ipi-aws-labs-camptocamp-com:6443/kube:admin logs deployment/db-v-a89a90d665\e[39m\n\e[94m\e[39m\n\e[94m****** db-v-a89a90d665-89dd4857-7sk7p ******\e[39m\n\e[94m\e[39mThe files belonging to this database system will be owned by user \"1000740000\".\nThis user must also own the server process.\n\nThe database cluster will be initialized with locale \"en_US.utf8\".\nThe default database encoding has accordingly been set to \"UTF8\".\nThe default text search configuration will be set to \"english\".\n\nData page checksums are disabled.\n\nfixing permissions on existing directory /var/lib/postgresql/data ... initdb: could not change permissions of directory \"/var/lib/postgresql/data\": Operation not permitted\n"
+  resource:
+    kind: Deployment
+    apiVersion: apps/v1
+    metadata:
+      name: db-v-a89a90d665
+      namespace: tgdsuma5-testing
+      selfLink: /apis/apps/v1/namespaces/tgdsuma5-testing/deployments/db-v-a89a90d665
+      uid: 05fc8f4c-3b8c-11ea-8cde-0a59823500ee
+      resourceVersion: '852809'
+      generation: 1
+      creationTimestamp: '2020-01-20T13:51:57Z'
+      labels:
+        garden.io/version: v-a89a90d665
+        module: postgres
+        service: db
+      annotations:
+        deployment.kubernetes.io/revision: '1'
+        garden.io/configured.replicas: '1'
+        garden.io/generated: 'true'
+        garden.io/last-applied-configuration: >-
+          {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{"garden.io/configured.replicas":"1","garden.io/generated":"true","garden.io/version":"v-a89a90d665"},"labels":{"garden.io/version":"v-a89a90d665","module":"postgres","service":"db"},"name":"db-v-a89a90d665","namespace":"tgdsuma5-testing"},"spec":{"replicas":1,"revisionHistoryLimit":3,"selector":{"matchLabels":{"garden.io/version":"v-a89a90d665","service":"db"}},"strategy":{"rollingUpdate":{"maxSurge":1,"maxUnavailable":1},"type":"RollingUpdate"},"template":{"metadata":{"labels":{"garden.io/version":"v-a89a90d665","module":"postgres","service":"db"}},"spec":{"containers":[{"env":[{"name":"GARDEN_VERSION","value":"v-a89a90d665"},{"name":"GARDEN_VARIABLES_DOMAIN","value":"apps.openshift-ipi-aws.labs.camptocamp.com"},{"name":"GARDEN_VARIABLES_ENVIRONMENT","value":"testing"},{"name":"GARDEN_MODULE_POSTGRES__OUTPUT_LOCAL_IMAGE_NAME","value":"postgres"},{"name":"GARDEN_MODULE_POSTGRES__OUTPUT_DEPLOYMENT_IMAGE_NAME","value":"docker.io/msutter/postgres"},{"name":"GARDEN_DEPENDENCIES","value":"[{\"moduleName\":\"postgres\",\"name\":\"postgres\",\"outputs\":{\"local-image-name\":\"postgres\",\"deployment-image-name\":\"docker.io/msutter/postgres\"},\"type\":\"build\",\"version\":\"v-a89a90d665\"}]"},{"name":"POD_NAME","valueFrom":{"fieldRef":{"fieldPath":"metadata.name"}}},{"name":"POD_NAMESPACE","valueFrom":{"fieldRef":{"fieldPath":"metadata.namespace"}}},{"name":"POD_IP","valueFrom":{"fieldRef":{"fieldPath":"status.podIP"}}},{"name":"POD_SERVICE_ACCOUNT","valueFrom":{"fieldRef":{"fieldPath":"spec.serviceAccountName"}}}],"image":"postgres:11.4-alpine","imagePullPolicy":"IfNotPresent","livenessProbe":{"exec":{"command":["psql","-w","-U","postgres","-d","postgres","-c","SELECT
+          1"]},"failureThreshold":3,"initialDelaySeconds":90,"periodSeconds":5,"successThreshold":1,"timeoutSeconds":3},"name":"db","ports":[{"containerPort":5432,"name":"db","protocol":"TCP"}],"readinessProbe":{"exec":{"command":["psql","-w","-U","postgres","-d","postgres","-c","SELECT
+          1"]},"failureThreshold":90,"initialDelaySeconds":2,"periodSeconds":1,"successThreshold":2,"timeoutSeconds":3},"resources":{"limits":{"cpu":"1","memory":"1Gi"},"requests":{"cpu":"10m","memory":"64Mi"}},"securityContext":{"allowPrivilegeEscalation":false},"volumeMounts":[{"mountPath":"/db-data","name":"data"}]}],"dnsPolicy":"ClusterFirst","restartPolicy":"Always","terminationGracePeriodSeconds":5,"volumes":[{"emptyDir":{},"name":"data"}]}}}}
+        garden.io/version: v-a89a90d665
+        kubectl.kubernetes.io/last-applied-configuration: >
+          {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{"garden.io/configured.replicas":"1","garden.io/generated":"true","garden.io/last-applied-configuration":"{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{\"garden.io/configured.replicas\":\"1\",\"garden.io/generated\":\"true\",\"garden.io/version\":\"v-a89a90d665\"},\"labels\":{\"garden.io/version\":\"v-a89a90d665\",\"module\":\"postgres\",\"service\":\"db\"},\"name\":\"db-v-a89a90d665\",\"namespace\":\"tgdsuma5-testing\"},\"spec\":{\"replicas\":1,\"revisionHistoryLimit\":3,\"selector\":{\"matchLabels\":{\"garden.io/version\":\"v-a89a90d665\",\"service\":\"db\"}},\"strategy\":{\"rollingUpdate\":{\"maxSurge\":1,\"maxUnavailable\":1},\"type\":\"RollingUpdate\"},\"template\":{\"metadata\":{\"labels\":{\"garden.io/version\":\"v-a89a90d665\",\"module\":\"postgres\",\"service\":\"db\"}},\"spec\":{\"containers\":[{\"env\":[{\"name\":\"GARDEN_VERSION\",\"value\":\"v-a89a90d665\"},{\"name\":\"GARDEN_VARIABLES_DOMAIN\",\"value\":\"apps.openshift-ipi-aws.labs.camptocamp.com\"},{\"name\":\"GARDEN_VARIABLES_ENVIRONMENT\",\"value\":\"testing\"},{\"name\":\"GARDEN_MODULE_POSTGRES__OUTPUT_LOCAL_IMAGE_NAME\",\"value\":\"postgres\"},{\"name\":\"GARDEN_MODULE_POSTGRES__OUTPUT_DEPLOYMENT_IMAGE_NAME\",\"value\":\"docker.io/msutter/postgres\"},{\"name\":\"GARDEN_DEPENDENCIES\",\"value\":\"[{\\\"moduleName\\\":\\\"postgres\\\",\\\"name\\\":\\\"postgres\\\",\\\"outputs\\\":{\\\"local-image-name\\\":\\\"postgres\\\",\\\"deployment-image-name\\\":\\\"docker.io/msutter/postgres\\\"},\\\"type\\\":\\\"build\\\",\\\"version\\\":\\\"v-a89a90d665\\\"}]\"},{\"name\":\"POD_NAME\",\"valueFrom\":{\"fieldRef\":{\"fieldPath\":\"metadata.name\"}}},{\"name\":\"POD_NAMESPACE\",\"valueFrom\":{\"fieldRef\":{\"fieldPath\":\"metadata.namespace\"}}},{\"name\":\"POD_IP\",\"valueFrom\":{\"fieldRef\":{\"fieldPath\":\"status.podIP\"}}},{\"name\":\"POD_SERVICE_ACCOUNT\",\"valueFrom\":{\"fieldRef\":{\"fieldPath\":\"spec.serviceAccountName\"}}}],\"image\":\"postgres:11.4-alpine\",\"imagePullPolicy\":\"IfNotPresent\",\"livenessProbe\":{\"exec\":{\"command\":[\"psql\",\"-w\",\"-U\",\"postgres\",\"-d\",\"postgres\",\"-c\",\"SELECT
+          1\"]},\"failureThreshold\":3,\"initialDelaySeconds\":90,\"periodSeconds\":5,\"successThreshold\":1,\"timeoutSeconds\":3},\"name\":\"db\",\"ports\":[{\"containerPort\":5432,\"name\":\"db\",\"protocol\":\"TCP\"}],\"readinessProbe\":{\"exec\":{\"command\":[\"psql\",\"-w\",\"-U\",\"postgres\",\"-d\",\"postgres\",\"-c\",\"SELECT
+          1\"]},\"failureThreshold\":90,\"initialDelaySeconds\":2,\"periodSeconds\":1,\"successThreshold\":2,\"timeoutSeconds\":3},\"resources\":{\"limits\":{\"cpu\":\"1\",\"memory\":\"1Gi\"},\"requests\":{\"cpu\":\"10m\",\"memory\":\"64Mi\"}},\"securityContext\":{\"allowPrivilegeEscalation\":false},\"volumeMounts\":[{\"mountPath\":\"/db-data\",\"name\":\"data\"}]}],\"dnsPolicy\":\"ClusterFirst\",\"restartPolicy\":\"Always\",\"terminationGracePeriodSeconds\":5,\"volumes\":[{\"emptyDir\":{},\"name\":\"data\"}]}}}}","garden.io/version":"v-a89a90d665"},"labels":{"garden.io/version":"v-a89a90d665","module":"postgres","service":"db"},"name":"db-v-a89a90d665","namespace":"tgdsuma5-testing"},"spec":{"replicas":1,"revisionHistoryLimit":3,"selector":{"matchLabels":{"garden.io/version":"v-a89a90d665","service":"db"}},"strategy":{"rollingUpdate":{"maxSurge":1,"maxUnavailable":1},"type":"RollingUpdate"},"template":{"metadata":{"labels":{"garden.io/version":"v-a89a90d665","module":"postgres","service":"db"}},"spec":{"containers":[{"env":[{"name":"GARDEN_VERSION","value":"v-a89a90d665"},{"name":"GARDEN_VARIABLES_DOMAIN","value":"apps.openshift-ipi-aws.labs.camptocamp.com"},{"name":"GARDEN_VARIABLES_ENVIRONMENT","value":"testing"},{"name":"GARDEN_MODULE_POSTGRES__OUTPUT_LOCAL_IMAGE_NAME","value":"postgres"},{"name":"GARDEN_MODULE_POSTGRES__OUTPUT_DEPLOYMENT_IMAGE_NAME","value":"docker.io/msutter/postgres"},{"name":"GARDEN_DEPENDENCIES","value":"[{\"moduleName\":\"postgres\",\"name\":\"postgres\",\"outputs\":{\"local-image-name\":\"postgres\",\"deployment-image-name\":\"docker.io/msutter/postgres\"},\"type\":\"build\",\"version\":\"v-a89a90d665\"}]"},{"name":"POD_NAME","valueFrom":{"fieldRef":{"fieldPath":"metadata.name"}}},{"name":"POD_NAMESPACE","valueFrom":{"fieldRef":{"fieldPath":"metadata.namespace"}}},{"name":"POD_IP","valueFrom":{"fieldRef":{"fieldPath":"status.podIP"}}},{"name":"POD_SERVICE_ACCOUNT","valueFrom":{"fieldRef":{"fieldPath":"spec.serviceAccountName"}}}],"image":"postgres:11.4-alpine","imagePullPolicy":"IfNotPresent","livenessProbe":{"exec":{"command":["psql","-w","-U","postgres","-d","postgres","-c","SELECT
+          1"]},"failureThreshold":3,"initialDelaySeconds":90,"periodSeconds":5,"successThreshold":1,"timeoutSeconds":3},"name":"db","ports":[{"containerPort":5432,"name":"db","protocol":"TCP"}],"readinessProbe":{"exec":{"command":["psql","-w","-U","postgres","-d","postgres","-c","SELECT
+          1"]},"failureThreshold":90,"initialDelaySeconds":2,"periodSeconds":1,"successThreshold":2,"timeoutSeconds":3},"resources":{"limits":{"cpu":"1","memory":"1Gi"},"requests":{"cpu":"10m","memory":"64Mi"}},"securityContext":{"allowPrivilegeEscalation":false},"volumeMounts":[{"mountPath":"/db-data","name":"data"}]}],"dnsPolicy":"ClusterFirst","restartPolicy":"Always","terminationGracePeriodSeconds":5,"volumes":[{"emptyDir":{},"name":"data"}]}}}}
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          garden.io/version: v-a89a90d665
+          service: db
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            garden.io/version: v-a89a90d665
+            module: postgres
+            service: db
+        spec:
+          volumes:
+            - name: data
+              emptyDir: {}
+          containers:
+            - name: db
+              image: 'postgres:11.4-alpine'
+              ports:
+                - name: db
+                  containerPort: 5432
+                  protocol: TCP
+              env:
+                - name: GARDEN_VERSION
+                  value: v-a89a90d665
+                - name: GARDEN_VARIABLES_DOMAIN
+                  value: apps.openshift-ipi-aws.labs.camptocamp.com
+                - name: GARDEN_VARIABLES_ENVIRONMENT
+                  value: testing
+                - name: GARDEN_MODULE_POSTGRES__OUTPUT_LOCAL_IMAGE_NAME
+                  value: postgres
+                - name: GARDEN_MODULE_POSTGRES__OUTPUT_DEPLOYMENT_IMAGE_NAME
+                  value: docker.io/msutter/postgres
+                - name: GARDEN_DEPENDENCIES
+                  value: >-
+                    [{"moduleName":"postgres","name":"postgres","outputs":{"local-image-name":"postgres","deployment-image-name":"docker.io/msutter/postgres"},"type":"build","version":"v-a89a90d665"}]
+                - name: POD_NAME
+                  valueFrom:
+                    fieldRef:
+                      apiVersion: v1
+                      fieldPath: metadata.name
+                - name: POD_NAMESPACE
+                  valueFrom:
+                    fieldRef:
+                      apiVersion: v1
+                      fieldPath: metadata.namespace
+                - name: POD_IP
+                  valueFrom:
+                    fieldRef:
+                      apiVersion: v1
+                      fieldPath: status.podIP
+                - name: POD_SERVICE_ACCOUNT
+                  valueFrom:
+                    fieldRef:
+                      apiVersion: v1
+                      fieldPath: spec.serviceAccountName
+              resources:
+                limits:
+                  cpu: '1'
+                  memory: 1Gi
+                requests:
+                  cpu: 10m
+                  memory: 64Mi
+              volumeMounts:
+                - name: data
+                  mountPath: /db-data
+              livenessProbe:
+                exec:
+                  command:
+                    - psql
+                    - '-w'
+                    - '-U'
+                    - postgres
+                    - '-d'
+                    - postgres
+                    - '-c'
+                    - SELECT 1
+                initialDelaySeconds: 90
+                timeoutSeconds: 3
+                periodSeconds: 5
+                successThreshold: 1
+                failureThreshold: 3
+              readinessProbe:
+                exec:
+                  command:
+                    - psql
+                    - '-w'
+                    - '-U'
+                    - postgres
+                    - '-d'
+                    - postgres
+                    - '-c'
+                    - SELECT 1
+                initialDelaySeconds: 2
+                timeoutSeconds: 3
+                periodSeconds: 1
+                successThreshold: 2
+                failureThreshold: 90
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              imagePullPolicy: IfNotPresent
+              securityContext:
+                allowPrivilegeEscalation: false
+          restartPolicy: Always
+          terminationGracePeriodSeconds: 5
+          dnsPolicy: ClusterFirst
+          securityContext: {}
+          schedulerName: default-scheduler
+      strategy:
+        type: RollingUpdate
+        rollingUpdate:
+          maxUnavailable: 1
+          maxSurge: 1
+      revisionHistoryLimit: 3
+      progressDeadlineSeconds: 600
+    status:
+      observedGeneration: 1
+      replicas: 1
+      updatedReplicas: 1
+      unavailableReplicas: 1
+      conditions:
+        - type: Available
+          status: 'True'
+          lastUpdateTime: '2020-01-20T13:51:57Z'
+          lastTransitionTime: '2020-01-20T13:51:57Z'
+          reason: MinimumReplicasAvailable
+          message: Deployment has minimum availability.
+        - type: Progressing
+          status: 'True'
+          lastUpdateTime: '2020-01-20T13:51:57Z'
+          lastTransitionTime: '2020-01-20T13:51:57Z'
+          reason: ReplicaSetUpdated
+          message: ReplicaSet "db-v-a89a90d665-89dd4857" is progressing.
+
